@@ -1,0 +1,14 @@
+0.6
+2018.2
+Jun 14 2018
+20:41:02
+D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.sim/sim_1/behav/xsim/glbl.v,1529022455,verilog,,,,glbl,,,,,,,,
+D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/sim_1/new/PISO_TB.v,1747514209,verilog,,,,PISO_TB,,,,,,,,
+D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/sim_1/new/SIPO_TB.v,1747514653,verilog,,,,SIPO_TB,,,,,,,,
+D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/sim_1/new/twosComplement_TB.v,1747508264,verilog,,,,twosComplement_TB,,,,,,,,
+D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/sources_1/Adder4Bit.v,1747409792,verilog,,,,Adder4Bit,,,,,,,,
+D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/sources_1/DFF.v,1747507677,verilog,,D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/sources_1/new/TwosComplement.v,,DFF,,,,,,,,
+D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/sources_1/FullAdder.v,1747409792,verilog,,D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/sources_1/Adder4Bit.v,,FullAdder,,,,,,,,
+D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/sources_1/new/PISO.v,1747513082,verilog,,D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/sim_1/new/PISO_TB.v,,PISO,,,,,,,,
+D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/sources_1/new/SIPO.v,1747515059,verilog,,D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/sim_1/new/SIPO_TB.v,,SIPO,,,,,,,,
+D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/sources_1/new/TwosComplement.v,1747506508,verilog,,D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/sim_1/new/twosComplement_TB.v,,TwosComplement,,,,,,,,

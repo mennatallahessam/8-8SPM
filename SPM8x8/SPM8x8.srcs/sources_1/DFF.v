@@ -1,3 +1,5 @@
+`timescale 1ns / 1ps
+
 module DFF(
     input clk, d, rst,
     output reg q

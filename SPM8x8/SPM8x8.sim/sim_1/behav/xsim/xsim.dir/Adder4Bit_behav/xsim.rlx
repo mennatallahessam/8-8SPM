@@ -1,0 +1,12 @@
+
+{ 
+    crc :  6624335665829916523  , 
+    ccp_crc :  0  , 
+    cmdline : " -wto b0f883d039c0432eae089ec669b7b458 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot Adder4Bit_behav xil_defaultlib.Adder4Bit xil_defaultlib.glbl" , 
+    buildDate : "Jun 14 2018" , 
+    buildTime : "20:41:02" , 
+    linkCmd : "D:\\Xilinx\\Vivado\\2018.2\\data\\..\\tps\\mingw\\6.2.0\\win64.o\\nt\\bin\\gcc.exe -Wa,-W  -O -Wl,--stack,104857600 -o \"xsim.dir/Adder4Bit_behav/xsimk.exe\"   \"xsim.dir/Adder4Bit_behav/obj/xsim_0.win64.obj\" \"xsim.dir/Adder4Bit_behav/obj/xsim_1.win64.obj\" \"D:\\Xilinx\\Vivado\\2018.2\\lib\\win64.o\\\\librdi_simulator_kernel.dll\"  \"D:\\Xilinx\\Vivado\\2018.2\\lib\\win64.o\\\\librdi_simbridge_kernel.dll\"" , 
+    aggregate_nets : 
+    [ 
+    ] 
+} 
