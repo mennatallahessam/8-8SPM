@@ -10,7 +10,7 @@ module SPM(
     wire [7:1] PP;
 
    
-    TwosComplement TCMP(.A(Y & X[7]), .R(reset), .clk(clk), .en(en), .S(PP[7]));
+    TwosComplement TCMP(.a(Y & X[7]),.clk(clk), .rst(reset),  .start(en), .s(PP[7]));
     
     CarrySaveAdder CSA6(.X(Y & X[6]), .Y(PP[7]), .R(reset), .clk(clk), .en(en), .sum(PP[6]));
     

@@ -7,7 +7,7 @@ module DFF(
 
     always @ (posedge clk) begin
         if (!rst)
-            q <= 1'b0;
+            q <= 0;
         else if (en)
             q <= d;
     end

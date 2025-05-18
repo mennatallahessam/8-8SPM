@@ -18,6 +18,7 @@ module topModule(
     reg en_count;
     reg [4:0] counter;
     reg multiplying;
+    reg done; 
     
     assign product_out = SIPO_out;
     
@@ -27,7 +28,7 @@ module topModule(
     PISO piso(.clk(clk), .rst(rst), .load(PISO_load), .parallel_in(Y), .out(serial_Y));
     
 //    pushButton_detector BTNC(.clk(clk_out), .rst(rst), .x(control), .z(controlBtn));
-    wire controlBtn = control;    
+        wire controlBtn = control;    
     
    
 //    pushButton_detector BTNL(.clk(clk_out), .rst(rst), .x(left), .z(leftBtn));
@@ -44,6 +45,7 @@ module topModule(
             counter <= 0;
             en_count <= 0;
             multiplying <= 0;
+            done <= 0;
         end 
         
         //else if (controlBtn) begin
@@ -51,6 +53,7 @@ module topModule(
             en_count <= 1;
             multiplying <= 1;
             counter <= 0;
+            done <= 0;
          end
                
         else if (multiplying) begin
@@ -58,6 +61,7 @@ module topModule(
             if (counter == 15) begin
                 multiplying <= 0;
                 en_count <= 0;
+                done <= 1;
              end
              
         end
