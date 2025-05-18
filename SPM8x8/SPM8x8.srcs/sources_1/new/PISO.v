@@ -1,7 +1,7 @@
 `timescale 1ns / 1ps
 
 module PISO #(parameter N = 8) (
-    input clk, rst, load, en,
+    input clk, rst, load,
     input [N-1:0] parallel_in,
     output out
     );
