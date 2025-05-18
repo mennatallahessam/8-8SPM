@@ -35,6 +35,8 @@ module topModule_tb;
 
     // Simulation logic
     initial begin
+     $monitor("Time=%0t, rst=%b, en_count=%b, multiplying=%b, counter=%d, serial_Y=%b, SPM_out=%b", 
+                $time, rst, top.en_count, top.multiplying, top.counter, top.serial_Y, top.SPM_serial_out);
         $display("Starting simulation...");
         rst = 0;
         control = 0;

@@ -10,7 +10,8 @@ module SIPO #(parameter N = 16) (
             if (!rst)
                 out <= 0;
             else
-                out <= {serial_in, out[N-1:1]};
+//                out <= {serial_in, out[N-1:1]};
+            out <= {out[N-2:0], serial_in};
         end
     
     

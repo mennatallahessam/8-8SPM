@@ -27,3 +27,4 @@ module SPM(
     CarrySaveAdder CSA0(.X(Y & X[0]), .Y(PP[1]), .R(reset), .clk(clk), .en(en), .sum(serial_out));
     
 endmodule
+

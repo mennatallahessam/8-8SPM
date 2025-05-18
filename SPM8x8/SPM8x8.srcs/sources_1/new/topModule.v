@@ -7,8 +7,7 @@ module topModule(
     output [15:0] product_out
     );
    
-    
-    
+   
 //    wire clk_out;
     wire clk_out = clk;
     
@@ -30,13 +29,14 @@ module topModule(
 //    pushButton_detector BTNC(.clk(clk_out), .rst(rst), .x(control), .z(controlBtn));
     wire controlBtn = control;    
     
-    // PRESENTATION
+   
 //    pushButton_detector BTNL(.clk(clk_out), .rst(rst), .x(left), .z(leftBtn));
     
 //    pushButton_detector BTNR(.clk(clk_out), .rst(rst), .x(right), .z(rightBtn));
     
     SPM spm(.Y(serial_Y), .X(X), .reset(rst), .clk(clk), .control(controlBtn), .en(en_count), .serial_out(SPM_serial_out));
-    
+
+
     SIPO sipo(.clk(clk), .rst(rst), .serial_in(SPM_serial_out), .out(SIPO_out));
     
     always @ (posedge clk) begin
@@ -55,7 +55,7 @@ module topModule(
                
         else if (multiplying) begin
             counter <= counter + 1;
-            if (counter == 16) begin
+            if (counter == 15) begin
                 multiplying <= 0;
                 en_count <= 0;
              end

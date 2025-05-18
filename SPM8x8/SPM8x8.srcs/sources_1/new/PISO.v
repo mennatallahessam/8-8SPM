@@ -13,7 +13,7 @@ module PISO #(parameter N = 8) (
         if (!rst)
             data <= 0;
         else if (load)
-            data = parallel_in;
+            data <= parallel_in;
         else
             data <= {1'b0, data[N-1:1]};
     end
