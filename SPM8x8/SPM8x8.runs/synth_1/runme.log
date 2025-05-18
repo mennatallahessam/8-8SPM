@@ -1,0 +1,44 @@
+
+*** Running vivado
+    with args -log topModule.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source topModule.tcl
+
+
+****** Vivado v2018.2 (64-bit)
+  **** SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+  **** IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source topModule.tcl -notrace
+create_project: Time (s): cpu = 00:00:05 ; elapsed = 00:00:11 . Memory (MB): peak = 328.391 ; gain = 98.930
+Command: synth_design -top topModule -part xc7a35tcpg236-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 6500 
+WARNING: [Synth 8-2611] redeclaration of ansi port count is not allowed [D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/sources_1/new/counter_x_bit.v:6]
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:06 ; elapsed = 00:00:11 . Memory (MB): peak = 447.406 ; gain = 106.699
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'topModule' [D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/sources_1/new/topModule.v:3]
+INFO: [Synth 8-6157] synthesizing module 'clock_divider' [D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/sources_1/clock_divider.v:1]
+	Parameter n bound to: 50000000 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'counter_x_bit' [D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/sources_1/new/counter_x_bit.v:3]
+	Parameter x bound to: 32 - type: integer 
+	Parameter n bound to: 50000000 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'counter_x_bit' (1#1) [D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/sources_1/new/counter_x_bit.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'clock_divider' (2#1) [D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/sources_1/clock_divider.v:1]
+INFO: [Synth 8-6157] synthesizing module 'PISO' [D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/sources_1/new/PISO.v:3]
+	Parameter N bound to: 8 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'PISO' (3#1) [D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/sources_1/new/PISO.v:3]
+ERROR: [Synth 8-439] module 'pushButton_detector' not found [D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/sources_1/new/topModule.v:23]
+ERROR: [Synth 8-6156] failed synthesizing module 'topModule' [D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/sources_1/new/topModule.v:3]
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:07 ; elapsed = 00:00:14 . Memory (MB): peak = 479.973 ; gain = 139.266
+---------------------------------------------------------------------------------
+synthesize failed
+INFO: [Common 17-83] Releasing license: Synthesis
+9 Infos, 1 Warnings, 0 Critical Warnings and 3 Errors encountered.
+synth_design failed
+ERROR: [Common 17-69] Command failed: Vivado Synthesis failed
+INFO: [Common 17-206] Exiting Vivado at Sun May 18 18:01:24 2025...

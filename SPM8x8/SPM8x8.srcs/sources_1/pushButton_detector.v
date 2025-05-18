@@ -1,4 +1,6 @@
-module pushbutton_detector(
+`timescale 1ns / 1ps
+
+module pushButton_detector(
     input clk, rst, x,
     output z
     );

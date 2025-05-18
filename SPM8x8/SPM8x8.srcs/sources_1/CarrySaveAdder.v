@@ -1,3 +1,5 @@
+`timescale 1ns / 1ps
+
 module CarrySaveAdder (
     input X, Y, R, clk, en,
     output sum

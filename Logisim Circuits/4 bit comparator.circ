@@ -140,43 +140,59 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <wire from="(200,350)" to="(210,350)"/>
     <wire from="(230,480)" to="(240,480)"/>
     <wire from="(420,620)" to="(490,620)"/>
-    <comp lib="0" loc="(230,260)" name="Pin">
-      <a name="tristate" val="false"/>
-      <a name="label" val="B3"/>
+    <comp lib="1" loc="(430,320)" name="AND Gate">
+      <a name="label" val="AND2"/>
     </comp>
-    <comp lib="1" loc="(270,480)" name="NOT Gate"/>
-    <comp lib="0" loc="(190,480)" name="Ground"/>
     <comp lib="0" loc="(220,210)" name="Ground"/>
     <comp lib="0" loc="(210,550)" name="Pin">
       <a name="tristate" val="false"/>
       <a name="label" val="B1"/>
     </comp>
-    <comp lib="0" loc="(170,340)" name="Power"/>
+    <comp lib="1" loc="(360,560)" name="XNOR Gate">
+      <a name="label" val="XOR3"/>
+    </comp>
+    <comp lib="0" loc="(240,720)" name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="label" val="B0"/>
+    </comp>
+    <comp lib="1" loc="(650,230)" name="OR Gate">
+      <a name="label" val="XOR4"/>
+    </comp>
+    <comp lib="1" loc="(380,420)" name="XNOR Gate">
+      <a name="label" val="XOR2"/>
+    </comp>
+    <comp lib="1" loc="(540,610)" name="AND Gate">
+      <a name="label" val="AND4"/>
+    </comp>
+    <comp lib="0" loc="(190,480)" name="Ground"/>
     <comp lib="0" loc="(200,670)" name="Ground"/>
     <comp lib="1" loc="(300,220)" name="NOT Gate"/>
-    <comp lib="1" loc="(360,560)" name="XNOR Gate"/>
-    <comp lib="1" loc="(540,470)" name="AND Gate"/>
-    <comp lib="1" loc="(410,220)" name="AND Gate"/>
+    <comp lib="0" loc="(240,410)" name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="label" val="B2"/>
+    </comp>
+    <comp lib="1" loc="(250,350)" name="NOT Gate"/>
+    <comp lib="1" loc="(270,480)" name="NOT Gate"/>
+    <comp lib="1" loc="(410,220)" name="AND Gate">
+      <a name="label" val="AND1"/>
+    </comp>
+    <comp lib="1" loc="(350,290)" name="NOR Gate">
+      <a name="label" val="XOR1"/>
+    </comp>
+    <comp lib="1" loc="(540,470)" name="AND Gate">
+      <a name="label" val="AND3"/>
+    </comp>
+    <comp lib="0" loc="(230,260)" name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="label" val="B3"/>
+    </comp>
+    <comp lib="0" loc="(170,340)" name="Power"/>
     <comp lib="0" loc="(680,230)" name="Pin">
       <a name="facing" val="west"/>
       <a name="output" val="true"/>
       <a name="label" val="A &gt; 4"/>
       <a name="labelloc" val="east"/>
     </comp>
-    <comp lib="0" loc="(240,720)" name="Pin">
-      <a name="tristate" val="false"/>
-      <a name="label" val="B0"/>
-    </comp>
-    <comp lib="1" loc="(650,230)" name="OR Gate"/>
-    <comp lib="1" loc="(540,610)" name="AND Gate"/>
-    <comp lib="0" loc="(240,410)" name="Pin">
-      <a name="tristate" val="false"/>
-      <a name="label" val="B2"/>
-    </comp>
-    <comp lib="1" loc="(350,290)" name="NOR Gate"/>
-    <comp lib="1" loc="(250,350)" name="NOT Gate"/>
     <comp lib="1" loc="(290,670)" name="NOT Gate"/>
-    <comp lib="1" loc="(380,420)" name="XNOR Gate"/>
-    <comp lib="1" loc="(430,320)" name="AND Gate"/>
   </circuit>
 </project>

@@ -1,0 +1,23 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../SPM8x8.srcs/sources_1/CarrySaveAdder.v" \
+"../../../../SPM8x8.srcs/sources_1/DFF.v" \
+"../../../../SPM8x8.srcs/sources_1/HalfAdder.v" \
+"../../../../SPM8x8.srcs/sources_1/new/PISO.v" \
+"../../../../SPM8x8.srcs/sources_1/new/SIPO.v" \
+"../../../../SPM8x8.srcs/sources_1/new/SPM.v" \
+"../../../../SPM8x8.srcs/sources_1/new/TwosComplement.v" \
+"../../../../SPM8x8.srcs/sources_1/clock_divider.v" \
+"../../../../SPM8x8.srcs/sources_1/new/counter_x_bit.v" \
+"../../../../SPM8x8.srcs/sources_1/debouncer.v" \
+"../../../../SPM8x8.srcs/sources_1/pushButton_detector.v" \
+"../../../../SPM8x8.srcs/sources_1/rising_edge.v" \
+"../../../../SPM8x8.srcs/sources_1/synchronizer.v" \
+"../../../../SPM8x8.srcs/sources_1/new/topModule.v" \
+"../../../../SPM8x8.srcs/sim_1/new/topModule_TB.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

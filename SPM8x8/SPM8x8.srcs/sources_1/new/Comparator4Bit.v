@@ -1,26 +1,13 @@
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 18.05.2025 13:52:02
-// Design Name: 
-// Module Name: Comparator4Bit
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-//////////////////////////////////////////////////////////////////////////////////
 
 
 module Comparator4Bit(
-
+    input [3:0] in,
+    output out
     );
+    
+    and and1();
+    and and2();
+    and and3();
+    and and2();
 endmodule

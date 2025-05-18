@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<Runs Version="1" Minor="0">
+	<Run Id="synth_1" LaunchDir="D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.runs/synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+</Runs>
+
