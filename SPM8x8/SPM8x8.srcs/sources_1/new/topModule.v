@@ -37,8 +37,7 @@ module topModule(
     
     SPM spm(.Y(serial_Y), .X(X), .reset(rst), .clk(clk), .control(controlBtn), .en(en_count), .serial_out(SPM_serial_out));
 
-
-    SIPO sipo(.clk(clk), .rst(rst), .serial_in(SPM_serial_out), .out(SIPO_out));
+    SIPO sipo(.clk(clk), .rst(rst), .serial_in(SPM_serial_out), .out(SIPO_out), .en(en_count));
     
     always @ (posedge clk) begin
         if (!rst) begin

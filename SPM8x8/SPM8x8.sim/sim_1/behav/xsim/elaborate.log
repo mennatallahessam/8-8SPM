@@ -10,7 +10,6 @@ Time Resolution for simulation is 1ps
 Compiling module xil_defaultlib.PISO
 Compiling module xil_defaultlib.TwosComplement
 Compiling module xil_defaultlib.DFF
-Compiling module xil_defaultlib.HalfAdder
 Compiling module xil_defaultlib.CarrySaveAdder
 Compiling module xil_defaultlib.SPM
 Compiling module xil_defaultlib.SIPO

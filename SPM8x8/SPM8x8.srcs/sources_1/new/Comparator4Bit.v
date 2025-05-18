@@ -6,8 +6,8 @@ module Comparator4Bit(
     output out
     );
     
-    and and1();
-    and and2();
-    and and3();
-    and and2();
+//    and and1();
+//    and and2();
+//    and and3();
+//    and and2();
 endmodule
