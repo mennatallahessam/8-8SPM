@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
-| Date             : Mon May 19 19:09:36 2025
+| Date             : Mon May 19 21:25:46 2025
 | Host             : DESKTOP-2G869AB running 64-bit major release  (build 9200)
 | Command          : report_power -file testingScroll_power_routed.rpt -pb testingScroll_power_summary_routed.pb -rpx testingScroll_power_routed.rpx
 | Design           : testingScroll
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.298        |
+| Total On-Chip Power (W)  | 0.292        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.229        |
+| Dynamic (W)              | 0.223        |
 | Device Static (W)        | 0.069        |
 | Effective TJA (C/W)      | 5.0          |
 | Max Ambient (C)          | 83.5         |
@@ -52,16 +52,16 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Slice Logic    |     0.115 |      126 |       --- |             --- |
-|   LUT as Logic |     0.084 |       48 |     20800 |            0.23 |
+| Slice Logic    |     0.113 |      128 |       --- |             --- |
+|   LUT as Logic |     0.082 |       47 |     20800 |            0.23 |
 |   CARRY4       |     0.018 |       13 |      8150 |            0.16 |
-|   Register     |     0.007 |       52 |     41600 |            0.13 |
+|   Register     |     0.007 |       55 |     41600 |            0.13 |
 |   BUFG         |     0.006 |        2 |        32 |            6.25 |
-|   Others       |     0.000 |        6 |       --- |             --- |
-| Signals        |     0.110 |      117 |       --- |             --- |
+|   Others       |     0.000 |        7 |       --- |             --- |
+| Signals        |     0.106 |      118 |       --- |             --- |
 | I/O            |     0.004 |       13 |       106 |           12.26 |
 | Static Power   |     0.069 |          |           |                 |
-| Total          |     0.298 |          |           |                 |
+| Total          |     0.292 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -71,7 +71,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.239 |       0.229 |      0.010 |
+| Vccint    |       1.000 |     0.233 |       0.223 |      0.010 |
 | Vccaux    |       1.800 |     0.013 |       0.000 |      0.013 |
 | Vcco33    |       3.300 |     0.000 |       0.000 |      0.000 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
@@ -135,18 +135,19 @@ Table of Contents
 3.1 By Hierarchy
 ----------------
 
-+------------------+-----------+
-| Name             | Power (W) |
-+------------------+-----------+
-| testingScroll    |     0.229 |
-|   btnl           |     0.000 |
-|     risinged     |     0.000 |
-|   btnr           |     0.000 |
-|     clockdivider |     0.000 |
-|     risinged     |     0.000 |
-|   divider        |     0.213 |
-|     counterMod   |     0.213 |
-|   sevenseg       |     0.000 |
-+------------------+-----------+
++-----------------------+-----------+
+| Name                  | Power (W) |
++-----------------------+-----------+
+| testingScroll         |     0.223 |
+|   btn_l               |     0.000 |
+|     risinged          |     0.000 |
+|   btn_r               |     0.000 |
+|     clockdivider      |     0.000 |
+|     risinged          |     0.000 |
+|   display_controller  |     0.000 |
+|     one_digit_display |     0.000 |
+|   divider             |     0.206 |
+|     counterMod        |     0.206 |
++-----------------------+-----------+
 
 

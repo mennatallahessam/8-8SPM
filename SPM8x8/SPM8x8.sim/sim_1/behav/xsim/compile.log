@@ -43,6 +43,8 @@ INFO: [VRFC 10-2263] Analyzing Verilog file "D:/AUC/Spring 2025/Digital Design I
 INFO: [VRFC 10-311] analyzing module ScrollController
 INFO: [VRFC 10-2263] Analyzing Verilog file "D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/sources_1/new/testingScroll.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module testingScroll
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/sources_1/new/SevenSegDriver.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module SevenSegDriver
 INFO: [VRFC 10-2263] Analyzing Verilog file "D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/sim_1/new/PISO_TB.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module PISO_TB
 INFO: [VRFC 10-2263] Analyzing Verilog file "D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/sim_1/new/SIPO_TB.v" into library xil_defaultlib
