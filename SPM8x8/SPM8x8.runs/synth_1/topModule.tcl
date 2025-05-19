@@ -17,6 +17,7 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
+set_param xicom.use_bs_reader 1
 create_project -in_memory -part xc7a35tcpg236-1
 
 set_param project.singleFileAddWarning.threshold 0
@@ -30,20 +31,26 @@ set_property board_part digilentinc.com:basys3:part0:1.2 [current_project]
 set_property ip_output_repo {d:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.cache/ip} [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 read_verilog -library xil_defaultlib {
-  {D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/sources_1/CarrySaveAdder.v}
   {D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/sources_1/DFF.v}
+  {D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/sources_1/CarrySaveAdder.v}
   {D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/sources_1/HalfAdder.v}
   {D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/sources_1/new/PISO.v}
   {D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/sources_1/new/SIPO.v}
   {D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/sources_1/new/SPM.v}
   {D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/sources_1/new/TwosComplement.v}
+  {D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/sources_1/new/topModule.v}
   {D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/sources_1/clock_divider.v}
   {D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/sources_1/new/counter_x_bit.v}
   {D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/sources_1/debouncer.v}
   {D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/sources_1/pushButton_detector.v}
   {D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/sources_1/rising_edge.v}
   {D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/sources_1/synchronizer.v}
-  {D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/sources_1/new/topModule.v}
+  {D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/sources_1/FullAdder.v}
+  {D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/sources_1/Adder4Bit.v}
+  {D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/sources_1/new/Comparator4Bit.v}
+  {D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/sources_1/new/DoubleDabble.v}
+  {D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/sources_1/new/ComaparativeAdder.v}
+  {D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/sources_1/new/SevenSegmentDisplayController.v}
 }
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
@@ -53,6 +60,9 @@ read_verilog -library xil_defaultlib {
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
+read_xdc {{D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/constrs_1/new/SevenSegmentConstraints.xdc}}
+set_property used_in_implementation false [get_files {{D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/constrs_1/new/SevenSegmentConstraints.xdc}}]
+
 set_param ips.enableIPCacheLiteLoad 0
 close [open __synthesis_is_running__ w]
 

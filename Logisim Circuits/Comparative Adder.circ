@@ -130,40 +130,28 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <wire from="(550,240)" to="(550,290)"/>
     <wire from="(360,230)" to="(560,230)"/>
     <wire from="(520,270)" to="(530,270)"/>
+    <comp lib="7" loc="(520,270)" name="main">
+      <a name="label" val="4B Adder"/>
+    </comp>
+    <comp lib="8" loc="(520,340)" name="main">
+      <a name="label" val="4B Comparator"/>
+    </comp>
     <comp lib="2" loc="(710,160)" name="Multiplexer">
       <a name="enable" val="false"/>
-    </comp>
-    <comp lib="8" loc="(520,340)" name="main"/>
-    <comp lib="0" loc="(350,110)" name="Pin">
-      <a name="tristate" val="false"/>
-      <a name="label" val="I0"/>
-    </comp>
-    <comp lib="0" loc="(760,160)" name="Pin">
-      <a name="facing" val="west"/>
-      <a name="output" val="true"/>
-      <a name="label" val="O1"/>
-      <a name="labelloc" val="east"/>
     </comp>
     <comp lib="2" loc="(710,300)" name="Multiplexer">
       <a name="enable" val="false"/>
     </comp>
-    <comp lib="0" loc="(760,300)" name="Pin">
-      <a name="facing" val="west"/>
-      <a name="output" val="true"/>
-      <a name="label" val="O3"/>
-      <a name="labelloc" val="east"/>
+    <comp lib="0" loc="(350,190)" name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="label" val="I2"/>
     </comp>
     <comp lib="2" loc="(710,230)" name="Multiplexer">
       <a name="enable" val="false"/>
     </comp>
-    <comp lib="0" loc="(350,150)" name="Pin">
+    <comp lib="0" loc="(350,110)" name="Pin">
       <a name="tristate" val="false"/>
-      <a name="label" val="I1"/>
-    </comp>
-    <comp lib="7" loc="(520,270)" name="main"/>
-    <comp lib="0" loc="(350,190)" name="Pin">
-      <a name="tristate" val="false"/>
-      <a name="label" val="I2"/>
+      <a name="label" val="I0"/>
     </comp>
     <comp lib="0" loc="(760,90)" name="Pin">
       <a name="facing" val="west"/>
@@ -171,18 +159,34 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
       <a name="label" val="O0"/>
       <a name="labelloc" val="east"/>
     </comp>
-    <comp lib="0" loc="(760,230)" name="Pin">
+    <comp lib="0" loc="(350,230)" name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="label" val="I3"/>
+    </comp>
+    <comp lib="0" loc="(350,150)" name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="label" val="I1"/>
+    </comp>
+    <comp lib="0" loc="(760,160)" name="Pin">
       <a name="facing" val="west"/>
       <a name="output" val="true"/>
-      <a name="label" val="O2"/>
+      <a name="label" val="O1"/>
+      <a name="labelloc" val="east"/>
+    </comp>
+    <comp lib="0" loc="(760,300)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="label" val="O3"/>
       <a name="labelloc" val="east"/>
     </comp>
     <comp lib="2" loc="(710,90)" name="Multiplexer">
       <a name="enable" val="false"/>
     </comp>
-    <comp lib="0" loc="(350,230)" name="Pin">
-      <a name="tristate" val="false"/>
-      <a name="label" val="I3"/>
+    <comp lib="0" loc="(760,230)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="label" val="O2"/>
+      <a name="labelloc" val="east"/>
     </comp>
   </circuit>
 </project>

@@ -2,3 +2,6 @@ Running: xsim.dir/CarrySaveAdder_tb_behav/xsimk.exe -simmode gui -wdb CarrySaveA
 Design successfully loaded
 Design Loading Memory Usage: 7608 KB (Peak: 7608 KB)
 Design Loading CPU Usage: 62 ms
+Simulation completed
+Simulation Memory Usage: 8372 KB (Peak: 8372 KB)
+Simulation CPU Usage: 92 ms

@@ -1,6 +1,6 @@
 webtalk_init -webtalk_dir D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.sim/sim_1/behav/xsim/xsim.dir/topModule_tb_behav/webtalk/
 webtalk_register_client -client project
-webtalk_add_data -client project -key date_generated -value "Sun May 18 21:41:10 2025" -context "software_version_and_target_device"
+webtalk_add_data -client project -key date_generated -value "Mon May 19 14:56:00 2025" -context "software_version_and_target_device"
 webtalk_add_data -client project -key product_version -value "XSIM v2018.2 (64-bit)" -context "software_version_and_target_device"
 webtalk_add_data -client project -key build_version -value "2258646" -context "software_version_and_target_device"
 webtalk_add_data -client project -key os_platform -value "WIN64" -context "software_version_and_target_device"
@@ -14,7 +14,7 @@ webtalk_add_data -client project -key target_package -value "not_applicable" -co
 webtalk_add_data -client project -key target_speed -value "not_applicable" -context "software_version_and_target_device"
 webtalk_add_data -client project -key random_id -value "d1831888-a20b-4459-9763-72c767572d6c" -context "software_version_and_target_device"
 webtalk_add_data -client project -key project_id -value "b0f883d039c0432eae089ec669b7b458" -context "software_version_and_target_device"
-webtalk_add_data -client project -key project_iteration -value "36" -context "software_version_and_target_device"
+webtalk_add_data -client project -key project_iteration -value "71" -context "software_version_and_target_device"
 webtalk_add_data -client project -key os_name -value "Microsoft Windows 8 or later , 64-bit" -context "user_environment"
 webtalk_add_data -client project -key os_release -value "major release  (build 9200)" -context "user_environment"
 webtalk_add_data -client project -key cpu_name -value "Intel(R) Core(TM) i7-10510U CPU @ 1.80GHz" -context "user_environment"
@@ -36,7 +36,7 @@ webtalk_add_data -client xsim -key Total_Nets -value "0" -context "xsim\\usage"
 webtalk_add_data -client xsim -key Total_Processes -value "110" -context "xsim\\usage"
 webtalk_add_data -client xsim -key Total_Instances -value "28" -context "xsim\\usage"
 webtalk_add_data -client xsim -key Xilinx_HDL_Libraries_Used -value "secureip unimacro_ver unisims_ver " -context "xsim\\usage"
-webtalk_add_data -client xsim -key Compiler_Time -value "1.33_sec" -context "xsim\\usage"
-webtalk_add_data -client xsim -key Compiler_Memory -value "55684_KB" -context "xsim\\usage"
-webtalk_transmit -clientid 3411529837 -regid "" -xml D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.sim/sim_1/behav/xsim/xsim.dir/topModule_tb_behav/webtalk/usage_statistics_ext_xsim.xml -html D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.sim/sim_1/behav/xsim/xsim.dir/topModule_tb_behav/webtalk/usage_statistics_ext_xsim.html -wdm D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.sim/sim_1/behav/xsim/xsim.dir/topModule_tb_behav/webtalk/usage_statistics_ext_xsim.wdm -intro "<H3>XSIM Usage Report</H3><BR>"
+webtalk_add_data -client xsim -key Compiler_Time -value "0.62_sec" -context "xsim\\usage"
+webtalk_add_data -client xsim -key Compiler_Memory -value "55632_KB" -context "xsim\\usage"
+webtalk_transmit -clientid 3090884049 -regid "" -xml D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.sim/sim_1/behav/xsim/xsim.dir/topModule_tb_behav/webtalk/usage_statistics_ext_xsim.xml -html D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.sim/sim_1/behav/xsim/xsim.dir/topModule_tb_behav/webtalk/usage_statistics_ext_xsim.html -wdm D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.sim/sim_1/behav/xsim/xsim.dir/topModule_tb_behav/webtalk/usage_statistics_ext_xsim.wdm -intro "<H3>XSIM Usage Report</H3><BR>"
 webtalk_terminate
