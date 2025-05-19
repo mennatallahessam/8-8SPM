@@ -21,6 +21,22 @@
 
 
 module ScrollController(
+    input clk,
+input rst,
+input left_btn,
+input right_btn,
+output reg [2:0] scroll_index  // 0 to 4
+);
+always @(posedge clk or posedge rst) begin
+    if (rst)
+        scroll_index <= 0;
+    else begin
+        if (left_btn && scroll_index > 0)
+            scroll_index <= scroll_index - 1;
+        else if (right_btn && scroll_index < 4)
+            scroll_index <= scroll_index + 1;
+    end
+end
 
-    );
+  
 endmodule

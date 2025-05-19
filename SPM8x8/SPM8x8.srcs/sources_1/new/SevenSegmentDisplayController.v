@@ -1,4 +1,4 @@
-`timescale 1ns / 1ps
+'timescale 1ns / 1ps
 
 module SevenSegmentDisplayController (
     input wire clk, 
@@ -34,25 +34,28 @@ module SevenSegmentDisplayController (
 
     reg [3:0] first, second, third;
     
-    always @ (*) begin
+always @(*) begin
         if (start_from == 0) begin
-            assign first = bcd_ten_thousands;
-            assign second = bcd_thousands;
-            assign third = bcd_hundreds;
-            
-        end
+            first = bcd_ten_thousands;
+            second = bcd_thousands;
+            third = bcd_hundreds;
+        end 
         else if (start_from == 1) begin
-            assign first = bcd_thousands;
-            assign second = bcd_hundreds;
-            assign third = bcd_tens;
-         end 
-         else if (start_from == 2) begin
-            assign first = bcd_hundreds;
-            assign second = bcd_tens;
-            assign third = bcd_ones;
-         end
-     
-     end
+            first = bcd_thousands;
+            second = bcd_hundreds;
+            third = bcd_tens;
+        end 
+        else if (start_from == 2) begin
+            first = bcd_hundreds;
+            second = bcd_tens;
+            third = bcd_ones;
+        end
+        else begin
+            first = 0;
+            second = 0;
+            third = 0;
+        end
+    end
      
         
         

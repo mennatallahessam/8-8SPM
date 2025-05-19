@@ -6,7 +6,7 @@ module SPM_tb;
     reg [7:0] X;
     wire serial_out;
 
-    // Instantiate the DUT
+    // Instantiate DUT
     SPM uut (
         .Y(Y),
         .X(X),
@@ -19,59 +19,79 @@ module SPM_tb;
 
     // Clock generation
     always #5 clk = ~clk;
+    
+ /*
+ initial begin 
+     clk = 0;
+     reset = 0; 
+      en = 1'b0; 
+     control = 1'b0;     
+    repeat(3) @(negedge clk);    
+       reset = 1; 
+      @(negedge clk);  
+        
+     Y = 1'b1;
+     X = 8'b0000_0001;
+     en = 1'b1; 
+     control = 1'b1; 
+     
+     repeat (20)       @(negedge clk); 
+     $stop; 
 
-    // Task for single test
-    task run_test(input [7:0] x_in, input y_bit, input expected_out);
+     end
+   */ 
+
+    // Test task
+    task run_serial_test(input [7:0] x_in, input [7:0] y_in);
+        integer i;
+        reg [15:0] collected_product;
+        reg [15:0] expected_product;
         begin
             X = x_in;
-            Y = y_bit;
-            reset = 1;
-            en = 0;
+            reset = 1; en = 0; control = 0;
+            collected_product = 0;
             #10;
             reset = 0;
-            en = 1;
-            #10;  // Let logic settle
-            if (serial_out === expected_out)
-                $display("PASS: X=%b, Y=%b -> serial_out=%b", x_in, y_bit, serial_out);
+
+            expected_product = x_in * y_in;
+
+            $display("=== TEST: X = %d, Y = %d ===", x_in, y_in);
+
+            for (i = 0; i < 8; i = i + 1) begin
+                Y = y_in[i];   // LSB first
+                en = 1;
+                #10;
+                collected_product[i] = serial_out;
+                en = 0;
+                #10;
+            end
+
+            $display("Expected Product: %d (Binary: %016b)", expected_product, expected_product);
+            $display("Actual   Product: %d (Binary: %016b)", collected_product, collected_product);
+            
+            if (collected_product == expected_product)
+                $display("RESULT: ? PASS\n");
             else
-                $display("FAIL: X=%b, Y=%b -> serial_out=%b (Expected %b)", x_in, y_bit, serial_out, expected_out);
-            en = 0;
-            #10;
+                $display("RESULT: ? FAIL\n");
         end
     endtask
 
+    // Test setup
     initial begin
-        $display("Starting SPM Self-Checking Testbench");
-        clk = 0; reset = 0; control = 0; en = 0;
-        
-        // --- Test Cases ---
-        // Case: X = 8'b00000000, Y = 0 => Output should be 0
-        run_test(8'b00000000, 0, 0);
+        clk = 0;
 
-        // Case: X = 8'b00000001, Y = 0 => Output should be 0
-        run_test(8'b00000001, 0, 0);
+        $display("=== Starting Serial Multiplier Tests ===");
 
-        // Case: X = 8'b00000001, Y = 1 => LSB should be 1
-        run_test(8'b00000001, 1, 1);
+        // Test cases
+        run_serial_test(8'd1, 8'd1);     // 1 × 1
+        run_serial_test(8'd2, 8'd2);     // 2 × 2
+        run_serial_test(8'd3, 8'd5);     // 3 × 5
+        run_serial_test(8'd7, 8'd15);    // 7 × 15
+        run_serial_test(8'd255, 8'd1);   // 255 × 1
+        run_serial_test(8'd255, 8'd255); // 255 × 255 = 65025
 
-        // Case: X = 8'b11111111 (-1 in 2's complement), Y = 1 => LSB of -1 = 1
-        run_test(8'b11111111, 1, 1);
-
-        // Case: X = 8'b00001111 (15), Y = 1 => LSB = 1
-        run_test(8'b00001111, 1, 1);
-
-        // Case: X = 8'b00001110 (14), Y = 1 => LSB = 0
-        run_test(8'b00001110, 1, 0);
-
-        // Case: X = 8'b10000000 (-128), Y = 1 => LSB = 0
-        run_test(8'b10000000, 1, 0);
-
-        // Case: X = 8'b00000010 (2), Y = 1 => LSB = 0
-        run_test(8'b00000010, 1, 0);
-
-        $display("All tests completed.");
+        $display("=== All Tests Complete ===");
         $finish;
     end
+
 endmodule
-
-

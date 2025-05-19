@@ -7,7 +7,7 @@ module clock_divider #(parameter n = 50000000)
     (.clk(clk), .reset(rst), .en(1'b1), .count(count));
     // Handle the output clock
     always @ (posedge clk, posedge rst) begin
-    if (rst) // Asynchronous Reset
+    if (!rst) // Asynchronous Reset
     clk_out <= 0;
     else if (count == n-1)
     clk_out <= ~ clk_out;

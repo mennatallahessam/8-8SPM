@@ -15,7 +15,8 @@ module SPM(
   
    assign and_result = X & {8{Y}};
    
-    TwosComplement TCMP(.a(and_result[7]),.clk(clk), .rst(reset),  .start(en), .s(PP[7]));
+    //TwosComplement TCMP(.A(and_result[7]),.clk(clk), .rst(reset),  .start(en), .S(PP[7]));
+    TwosComplement TCMP(.A(and_result[7]),.clk(clk), .R(reset), .S(PP[7]));
     
     CarrySaveAdder CSA6(.X(and_result[6]), .Y(PP[7]), .R(reset), .clk(clk), .en(en), .sum(PP[6]));
     

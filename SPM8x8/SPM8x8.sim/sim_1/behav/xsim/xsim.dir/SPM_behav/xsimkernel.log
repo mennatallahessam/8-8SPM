@@ -2,3 +2,6 @@ Running: xsim.dir/SPM_behav/xsimk.exe -simmode gui -wdb SPM_behav.wdb -simrunnum
 Design successfully loaded
 Design Loading Memory Usage: 8156 KB (Peak: 8156 KB)
 Design Loading CPU Usage: 46 ms
+Simulation completed
+Simulation Memory Usage: 8784 KB (Peak: 8784 KB)
+Simulation CPU Usage: 62 ms
