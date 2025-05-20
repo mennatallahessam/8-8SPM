@@ -2,8 +2,8 @@
 
 module counter_x_bit #(parameter x = 3, n = 6)
 (input clk, reset, en,
-output [x-1:0] count);
-reg [x-1:0] count;
+output reg [x-1:0] count);
+
 always @(posedge clk, posedge reset) begin
 if (reset == 1)
 count <= 0; // non-blocking assignment
@@ -18,4 +18,5 @@ count <= count + 1; // non-blocking assignment
 end
 end
 endmodule
+
 

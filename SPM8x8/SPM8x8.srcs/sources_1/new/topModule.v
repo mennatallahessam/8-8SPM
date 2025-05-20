@@ -9,62 +9,68 @@ module topModule(
    
    
 //    wire clk_out;
-    wire clk_out = clk;
+//    assign clk_out = clk;
     
-    wire serial_Y;
+//    wire serial_Y;
 //    wire controlBtn, leftBtn, rightBtn;
-    wire SPM_serial_out;
-    wire [15:0] SIPO_out;
-    reg en_count;
-    reg [4:0] counter;
-    reg multiplying;
-    reg done; 
+//    wire SPM_serial_out;
+//    wire [15:0] SIPO_out;
+//    reg en_count;
+//    reg [4:0] counter;
+//    reg multiplying;
+//    reg done; 
     
-    assign product_out = SIPO_out;
+//    assign product_out = SIPO_out;
     
-    //COMMENTED FOR SIMULATION
-//    clock_divider divider(.clk(clk), .rst(rst), .clk_out(clk_out));
+//    //COMMENTED FOR SIMULATION
+////    clock_divider divider(.clk(clk), .rst(rst), .clk_out(clk_out));
     
-    PISO piso(.clk(clk), .rst(rst), .load(PISO_load), .parallel_in(Y), .out(serial_Y));
+//    PISO piso(.clk(clk), .rst(rst), .load(PISO_load), .parallel_in(Y), .out(serial_Y));
     
-//    pushButton_detector BTNC(.clk(clk_out), .rst(rst), .x(control), .z(controlBtn));
-        wire controlBtn = control;    
+////    pushButton_detector BTNC(.clk(clk_out), .rst(rst), .x(control), .z(controlBtn));
+//        wire controlBtn = control;    
     
    
-//    pushButton_detector BTNL(.clk(clk_out), .rst(rst), .x(left), .z(leftBtn));
+////    pushButton_detector BTNL(.clk(clk_out), .rst(rst), .x(left), .z(leftBtn));
     
-//    pushButton_detector BTNR(.clk(clk_out), .rst(rst), .x(right), .z(rightBtn));
+////    pushButton_detector BTNR(.clk(clk_out), .rst(rst), .x(right), .z(rightBtn));
     
-    SPM spm(.Y(serial_Y), .X(X), .reset(rst), .clk(clk), .control(controlBtn), .en(en_count), .serial_out(SPM_serial_out));
+////    SPM spm(.Y(serial_Y), .X(X), .reset(rst), .clk(clk), .control(controlBtn), .en(en_count), .serial_out(SPM_serial_out));
+//    SPM spm(.out(product_out), .finish(),
+//    input reset,
+//    input clk,
+//    input [7:0] A,
+//    input [7:0] B
+//);    
 
-    SIPO sipo(.clk(clk), .rst(rst), .serial_in(SPM_serial_out), .out(SIPO_out), .en(en_count));
+//    SIPO sipo(.clk(clk), .rst(rst), .serial_in(SPM_serial_out), .out(SIPO_out), .en(en_count));
     
-    always @ (posedge clk) begin
-        if (!rst) begin
-            counter <= 0;
-            en_count <= 0;
-            multiplying <= 0;
-            done <= 0;
-        end 
+//    always @ (posedge clk) begin
+//        if (!rst) begin
+//            counter <= 0;
+//            en_count <= 0;
+//            multiplying <= 0;
+//            done <= 0;
+//        end 
         
-        //else if (controlBtn) begin
-        else if (control) begin
-            en_count <= 1;
-            multiplying <= 1;
-            counter <= 0;
-            done <= 0;
-         end
+//        //else if (controlBtn) begin
+//        else if (control) begin
+//            en_count <= 1;
+//            multiplying <= 1;
+//            counter <= 0;
+//            done <= 0;
+//         end
                
-        else if (multiplying) begin
-            counter <= counter + 1;
-            if (counter == 15) begin
-                multiplying <= 0;
-                en_count <= 0;
-                done <= 1;
-             end
+//        else if (multiplying) begin
+//            counter <= counter + 1;
+//            if (counter == 15) begin
+//                multiplying <= 0;
+//                en_count <= 0;
+//                done <= 1;
+//             end
              
-        end
+//        end
         
-    end
+//    end
     
 endmodule

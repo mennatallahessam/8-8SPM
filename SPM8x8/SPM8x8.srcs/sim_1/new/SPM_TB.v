@@ -66,3 +66,97 @@ reg [7:0] testA[0:4];
   end
 
 endmodule
+
+//`timescale 1ns / 1ps
+
+//module SPM_TB;
+
+//    reg clk;
+//    reg reset;
+//    reg start;
+//    reg serial_in;
+//    reg [7:0] parallel_in;
+//    wire [15:0] product_out;
+//    wire finish;
+
+//    // Instantiate the SPM
+//    SPM uut (
+//        .clk(clk),
+//        .reset(reset),
+//        .start(start),
+//        .serial_in(serial_in),
+//        .parallel_in(parallel_in),
+//        .product_out(product_out),
+//        .finish(finish)
+//    );
+
+//    // Clock generation: 10ns period
+//    initial clk = 0;
+//    always #5 clk = ~clk;
+
+//    // Task to send serial operand bits LSB first
+//    task send_serial_operand(input [7:0] operand);
+//        integer i;
+//        begin
+//            for (i = 0; i < 8; i = i + 1) begin
+//                serial_in = operand[i];  // Set bit BEFORE clock edge
+//                @(posedge clk);          // Wait for clock edge where module reads serial_in
+//            end
+//        end
+//    endtask
+
+//    initial begin
+//        // Initialize inputs
+//        reset = 1;
+//        start = 0;
+//        serial_in = 0;
+//        parallel_in = 0;
+
+//        @(posedge clk);
+//        reset = 0;
+
+//        // Test vectors
+//        // Multiply 13 * 7 = 91
+//        parallel_in = 7;
+//        @(posedge clk);
+//        start = 1;
+//        send_serial_operand(8'd13); // send serial bits for 13 LSB first
+//        @(posedge clk);
+//        start = 0;
+
+//        // Wait for finish
+//        wait(finish == 1);
+//        $display("Test 1: 13 * 7 = %d (Expected: 91)", product_out);
+
+//        @(posedge clk);
+
+//        // Multiply 255 * 2 = 510
+//        parallel_in = 8'd2;
+//        @(posedge clk);
+//        start = 1;
+//        send_serial_operand(8'd255);
+//        @(posedge clk);
+//        start = 0;
+
+//        wait(finish == 1);
+//        $display("Test 2: 255 * 2 = %d (Expected: 510)", product_out);
+
+//        @(posedge clk);
+
+//        // Multiply 0 * 100 = 0
+//        parallel_in = 8'd100;
+//        @(posedge clk);
+//        start = 1;
+//        send_serial_operand(8'd0);
+//        @(posedge clk);
+//        start = 0;
+
+//        wait(finish == 1);
+//        $display("Test 3: 0 * 100 = %d (Expected: 0)", product_out);
+
+//        @(posedge clk);
+
+//        $finish;
+//    end
+
+//endmodule
