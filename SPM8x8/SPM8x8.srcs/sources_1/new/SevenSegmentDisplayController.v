@@ -6,7 +6,9 @@ module SevenSegmentDisplayController (
     input [1:0] digit,
     output reg [6:0] seg,          
     output reg [3:0] an,
-    input en
+    input en,
+    input sign
+    
     );
     
     reg [3:0] current_num;
@@ -27,8 +29,8 @@ module SevenSegmentDisplayController (
                     current_num = first;
                 end
                 default: begin 
-                    an = 4'b1111;
-                    current_num = 4'd15;
+                    an = 4'b0111;
+                    current_num = 4'd10;
                 end
             endcase
         end
@@ -47,6 +49,8 @@ module SevenSegmentDisplayController (
                 4'd7: seg = 7'b1111000;
                 4'd8: seg = 7'b0000000;
                 4'd9: seg = 7'b0010000;
+                4'd10: if (sign) seg = 7'b0111111;
+                else seg = 7'b1111111 ;
                 default: seg = 7'b1111111;
             endcase
         end

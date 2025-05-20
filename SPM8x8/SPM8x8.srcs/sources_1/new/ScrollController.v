@@ -5,14 +5,13 @@ module ScrollController (
     input [15:0] product,
     output [6:0] seg,
     output [3:0] an,
-    input en
+    input en,
+    input sign
     );
     
-    //ADD 16 BIT PRODUCT TO PARAMETERS!!! AND THEN CHECK FOR SIGN IN SWITCH CASE 
 
     wire leftBtn_out, rightBtn_out;
     wire [3:0] bcd_ones, bcd_tens, bcd_hundreds, bcd_thousands, bcd_ten_thousands;
-//    wire clk_out;
     wire clk_buttons;
     reg [3:0] first, second, third;
     wire [1:0] segmentSelector;
@@ -40,6 +39,7 @@ module ScrollController (
     pushButton_detector btnl(.clk(clk_buttons), .rst(rst), .x(leftBtn), .z(leftBtn_out));
     pushButton_detector btnr(.clk(clk_buttons), .rst(rst), .x(rightBtn), .z(rightBtn_out));
     
+       
     DoubleDabble BCD (.binary_in(product), .bcd_ones(bcd_ones), .bcd_tens(bcd_tens),.bcd_hundreds(bcd_hundreds), .bcd_thousands(bcd_thousands), .bcd_ten_thousands(bcd_ten_thousands), .en(en));
     
     
@@ -84,11 +84,9 @@ module ScrollController (
         end
     end
    
-   SevenSegmentDisplayController sevenseg(.clk(clk_display_internal), .first(first), .second(second), .third(third), .digit(segmentSelector), .seg(seg), .an(an), .en(en));
+   SevenSegmentDisplayController sevenseg(.clk(clk_display_internal), .first(first), .second(second), .third(third), .digit(segmentSelector), .seg(seg), .an(an), .en(en),.sign(sign));
 
    counter_x_bit #(2,4) counter(.clk(clk_display_internal), .reset(rst), .en(en), .count(segmentSelector));
-
-   assign seg_sel_debug = segmentSelector;
 
 endmodule
 

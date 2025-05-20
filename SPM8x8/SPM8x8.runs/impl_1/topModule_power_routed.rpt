@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
-| Date             : Tue May 20 18:25:54 2025
+| Date             : Tue May 20 22:27:21 2025
 | Host             : DESKTOP-2G869AB running 64-bit major release  (build 9200)
 | Command          : report_power -file topModule_power_routed.rpt -pb topModule_power_summary_routed.pb -rpx topModule_power_routed.rpx
 | Design           : topModule
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 8.742        |
+| Total On-Chip Power (W)  | 6.973        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 8.619        |
-| Device Static (W)        | 0.123        |
+| Dynamic (W)              | 6.869        |
+| Device Static (W)        | 0.104        |
 | Effective TJA (C/W)      | 5.0          |
-| Max Ambient (C)          | 41.3         |
-| Junction Temperature (C) | 68.7         |
+| Max Ambient (C)          | 50.1         |
+| Junction Temperature (C) | 59.9         |
 | Confidence Level         | Low          |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -52,16 +52,16 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Slice Logic    |     0.505 |      641 |       --- |             --- |
-|   LUT as Logic |     0.385 |      281 |     20800 |            1.35 |
+| Slice Logic    |     0.551 |      674 |       --- |             --- |
+|   LUT as Logic |     0.432 |      291 |     20800 |            1.40 |
 |   CARRY4       |     0.072 |       28 |      8150 |            0.34 |
-|   Register     |     0.041 |      247 |     41600 |            0.59 |
+|   Register     |     0.041 |      264 |     41600 |            0.63 |
 |   BUFG         |     0.006 |        2 |        32 |            6.25 |
-|   Others       |     0.000 |       53 |       --- |             --- |
-| Signals        |     0.592 |      552 |       --- |             --- |
-| I/O            |     7.522 |       34 |       106 |           32.08 |
-| Static Power   |     0.123 |          |           |                 |
-| Total          |     8.742 |          |           |                 |
+|   Others       |     0.000 |       52 |       --- |             --- |
+| Signals        |     0.604 |      567 |       --- |             --- |
+| I/O            |     5.714 |       34 |       106 |           32.08 |
+| Static Power   |     0.104 |          |           |                 |
+| Total          |     6.973 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -71,9 +71,9 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     1.228 |       1.177 |      0.051 |
-| Vccaux    |       1.800 |     0.290 |       0.273 |      0.017 |
-| Vcco33    |       3.300 |     2.107 |       2.106 |      0.001 |
+| Vccint    |       1.000 |     1.271 |       1.235 |      0.036 |
+| Vccaux    |       1.800 |     0.222 |       0.206 |      0.015 |
+| Vcco33    |       3.300 |     1.596 |       1.595 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
@@ -138,10 +138,10 @@ Table of Contents
 +---------------------+-----------+
 | Name                | Power (W) |
 +---------------------+-----------+
-| topModule           |     8.619 |
-|   btn_reset         |    <0.001 |
+| topModule           |     6.869 |
+|   btn_reset         |     0.000 |
 |     db              |     0.000 |
-|     risinged        |    <0.001 |
+|     risinged        |     0.000 |
 |     sync            |     0.000 |
 |       dff1          |     0.000 |
 |       dff2          |     0.000 |
@@ -151,9 +151,9 @@ Table of Contents
 |     sync            |     0.000 |
 |       dff1          |     0.000 |
 |       dff2          |     0.000 |
-|   button_divider    |     0.260 |
-|     counterMod      |     0.260 |
-|   nolabel_line23    |     0.718 |
+|   button_divider    |     0.268 |
+|     counterMod      |     0.268 |
+|   scroll            |     0.703 |
 |     BCD             |     0.000 |
 |     btnl            |     0.000 |
 |       db            |     0.000 |
@@ -167,13 +167,13 @@ Table of Contents
 |       sync          |     0.000 |
 |         dff1        |     0.000 |
 |         dff2        |     0.000 |
-|     counter         |     0.081 |
-|     divider_buttons |     0.267 |
-|       counterMod    |     0.267 |
-|     divider_display |     0.257 |
-|       counterMod    |     0.257 |
-|     sevenseg        |     0.113 |
-|   spm               |     0.028 |
+|     counter         |     0.086 |
+|     divider_buttons |     0.274 |
+|       counterMod    |     0.274 |
+|     divider_display |     0.273 |
+|       counterMod    |     0.273 |
+|     sevenseg        |     0.069 |
+|   spm               |     0.020 |
 +---------------------+-----------+
 
 

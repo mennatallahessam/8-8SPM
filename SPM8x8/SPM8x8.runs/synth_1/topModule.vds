@@ -2,8 +2,8 @@
 # Vivado v2018.2 (64-bit)
 # SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
 # IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
-# Start of session at: Tue May 20 18:23:37 2025
-# Process ID: 17344
+# Start of session at: Tue May 20 22:25:44 2025
+# Process ID: 3316
 # Current directory: D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.runs/synth_1
 # Command line: vivado.exe -log topModule.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source topModule.tcl
 # Log file: D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.runs/synth_1/topModule.vds
@@ -15,9 +15,9 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 2384 
+INFO: Helper process launched with PID 7428 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 435.438 ; gain = 95.086
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 434.965 ; gain = 94.566
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'topModule' [D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/sources_1/new/topModule.v:3]
 INFO: [Synth 8-6157] synthesizing module 'clock_divider' [D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/sources_1/clock_divider.v:1]
@@ -63,7 +63,7 @@ INFO: [Synth 8-6155] done synthesizing module 'ScrollController' (11#1) [D:/AUC/
 INFO: [Synth 8-6155] done synthesizing module 'topModule' (12#1) [D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/sources_1/new/topModule.v:3]
 WARNING: [Synth 8-3331] design SevenSegmentDisplayController has unconnected port clk
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 490.801 ; gain = 150.449
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 489.727 ; gain = 149.328
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -76,10 +76,10 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 490.801 ; gain = 150.449
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 489.727 ; gain = 149.328
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 490.801 ; gain = 150.449
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 489.727 ; gain = 149.328
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7a35tcpg236-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -161,22 +161,22 @@ Completed Processing XDC Constraints
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 820.980 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 821.188 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 820.980 ; gain = 480.629
+Finished Constraint Validation : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 821.188 ; gain = 480.789
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 820.980 ; gain = 480.629
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 821.188 ; gain = 480.789
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 820.980 ; gain = 480.629
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 821.188 ; gain = 480.789
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5545] ROM "count" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-5545] ROM "clk_out" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
@@ -202,14 +202,14 @@ WARNING: [Synth 8-327] inferring latch for variable 'bcd_tens_reg' [D:/AUC/Sprin
 WARNING: [Synth 8-327] inferring latch for variable 'bcd_hundreds_reg' [D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/sources_1/new/DoubleDabble.v:43]
 WARNING: [Synth 8-327] inferring latch for variable 'bcd_thousands_reg' [D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/sources_1/new/DoubleDabble.v:44]
 WARNING: [Synth 8-327] inferring latch for variable 'bcd_ten_thousands_reg' [D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/sources_1/new/DoubleDabble.v:45]
-WARNING: [Synth 8-327] inferring latch for variable 'seg_reg' [D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/sources_1/new/SevenSegmentDisplayController.v:40]
-WARNING: [Synth 8-327] inferring latch for variable 'an_reg' [D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/sources_1/new/SevenSegmentDisplayController.v:18]
-WARNING: [Synth 8-327] inferring latch for variable 'current_num_reg' [D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/sources_1/new/SevenSegmentDisplayController.v:19]
-WARNING: [Synth 8-327] inferring latch for variable 'first_reg' [D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/sources_1/new/ScrollController.v:32]
-WARNING: [Synth 8-327] inferring latch for variable 'second_reg' [D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/sources_1/new/ScrollController.v:32]
-WARNING: [Synth 8-327] inferring latch for variable 'third_reg' [D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/sources_1/new/ScrollController.v:32]
+WARNING: [Synth 8-327] inferring latch for variable 'seg_reg' [D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/sources_1/new/SevenSegmentDisplayController.v:42]
+WARNING: [Synth 8-327] inferring latch for variable 'an_reg' [D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/sources_1/new/SevenSegmentDisplayController.v:20]
+WARNING: [Synth 8-327] inferring latch for variable 'current_num_reg' [D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/sources_1/new/SevenSegmentDisplayController.v:21]
+WARNING: [Synth 8-327] inferring latch for variable 'first_reg' [D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/sources_1/new/ScrollController.v:31]
+WARNING: [Synth 8-327] inferring latch for variable 'second_reg' [D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/sources_1/new/ScrollController.v:31]
+WARNING: [Synth 8-327] inferring latch for variable 'third_reg' [D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/sources_1/new/ScrollController.v:31]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:16 ; elapsed = 00:00:19 . Memory (MB): peak = 820.980 ; gain = 480.629
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 821.188 ; gain = 480.789
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -223,12 +223,15 @@ Start RTL Component Statistics
 Detailed RTL Component Info : 
 +---Adders : 
 	   2 Input     32 Bit       Adders := 3     
+	   2 Input      8 Bit       Adders := 2     
 	   2 Input      4 Bit       Adders := 46    
 	   2 Input      2 Bit       Adders := 2     
++---XORs : 
+	   2 Input      1 Bit         XORs := 1     
 +---Registers : 
 	               32 Bit    Registers := 3     
 	               16 Bit    Registers := 1     
-	                8 Bit    Registers := 2     
+	                8 Bit    Registers := 4     
 	                4 Bit    Registers := 1     
 	                2 Bit    Registers := 2     
 	                1 Bit    Registers := 25    
@@ -236,7 +239,8 @@ Detailed RTL Component Info :
 	   2 Input     35 Bit        Muxes := 1     
 	   2 Input     32 Bit        Muxes := 3     
 	   2 Input     16 Bit        Muxes := 1     
-	   2 Input      8 Bit        Muxes := 2     
+	   2 Input      8 Bit        Muxes := 4     
+	  13 Input      7 Bit        Muxes := 1     
 	   2 Input      4 Bit        Muxes := 35    
 	   4 Input      4 Bit        Muxes := 5     
 	   3 Input      3 Bit        Muxes := 4     
@@ -251,6 +255,16 @@ Finished RTL Component Statistics
 Start RTL Hierarchical Component Statistics 
 ---------------------------------------------------------------------------------
 Hierarchical RTL Component report 
+Module topModule 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      8 Bit       Adders := 2     
++---XORs : 
+	   2 Input      1 Bit         XORs := 1     
++---Registers : 
+	                8 Bit    Registers := 2     
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 2     
 Module counter_x_bit 
 Detailed RTL Component Info : 
 +---Adders : 
@@ -317,6 +331,7 @@ Detailed RTL Component Info :
 Module SevenSegmentDisplayController 
 Detailed RTL Component Info : 
 +---Muxes : 
+	  13 Input      7 Bit        Muxes := 1     
 	   4 Input      4 Bit        Muxes := 2     
 Module counter_x_bit__parameterized1 
 Detailed RTL Component Info : 
@@ -354,14 +369,12 @@ Start Cross Boundary and Area Optimization
 Warning: Parallel synthesis criteria is not met 
 INFO: [Synth 8-5545] ROM "button_divider/counterMod/count" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-5545] ROM "button_divider/clk_out" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "nolabel_line23/divider_buttons/counterMod/count" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "nolabel_line23/divider_buttons/clk_out" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "nolabel_line23/divider_display/counterMod/count" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "nolabel_line23/divider_display/clk_out" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\nolabel_line23/sevenseg/an_reg[3] )
-WARNING: [Synth 8-3332] Sequential element (nolabel_line23/sevenseg/an_reg[3]) is unused and will be removed from module topModule.
+INFO: [Synth 8-5545] ROM "scroll/divider_buttons/counterMod/count" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "scroll/divider_buttons/clk_out" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "scroll/divider_display/counterMod/count" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "scroll/divider_display/clk_out" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:23 ; elapsed = 00:00:26 . Memory (MB): peak = 820.980 ; gain = 480.629
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 821.188 ; gain = 480.789
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -373,13 +386,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:33 ; elapsed = 00:00:37 . Memory (MB): peak = 820.980 ; gain = 480.629
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:23 ; elapsed = 00:00:25 . Memory (MB): peak = 821.188 ; gain = 480.789
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:33 ; elapsed = 00:00:37 . Memory (MB): peak = 820.980 ; gain = 480.629
+Finished Timing Optimization : Time (s): cpu = 00:00:23 ; elapsed = 00:00:25 . Memory (MB): peak = 821.188 ; gain = 480.789
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -391,7 +404,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:33 ; elapsed = 00:00:37 . Memory (MB): peak = 858.539 ; gain = 518.188
+Finished Technology Mapping : Time (s): cpu = 00:00:23 ; elapsed = 00:00:26 . Memory (MB): peak = 856.758 ; gain = 516.359
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -415,7 +428,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:34 ; elapsed = 00:00:38 . Memory (MB): peak = 858.539 ; gain = 518.188
+Finished IO Insertion : Time (s): cpu = 00:00:24 ; elapsed = 00:00:26 . Memory (MB): peak = 856.758 ; gain = 516.359
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -428,7 +441,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:34 ; elapsed = 00:00:39 . Memory (MB): peak = 858.539 ; gain = 518.188
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:24 ; elapsed = 00:00:26 . Memory (MB): peak = 856.758 ; gain = 516.359
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -440,25 +453,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:34 ; elapsed = 00:00:39 . Memory (MB): peak = 858.539 ; gain = 518.188
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:24 ; elapsed = 00:00:26 . Memory (MB): peak = 856.758 ; gain = 516.359
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:34 ; elapsed = 00:00:39 . Memory (MB): peak = 858.539 ; gain = 518.188
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:24 ; elapsed = 00:00:26 . Memory (MB): peak = 856.758 ; gain = 516.359
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:34 ; elapsed = 00:00:39 . Memory (MB): peak = 858.539 ; gain = 518.188
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:24 ; elapsed = 00:00:26 . Memory (MB): peak = 856.758 ; gain = 516.359
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:34 ; elapsed = 00:00:39 . Memory (MB): peak = 858.539 ; gain = 518.188
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:24 ; elapsed = 00:00:26 . Memory (MB): peak = 856.758 ; gain = 516.359
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -477,15 +490,15 @@ Report Cell Usage:
 |1     |BUFG   |     2|
 |2     |CARRY4 |    28|
 |3     |LUT1   |     3|
-|4     |LUT2   |    11|
-|5     |LUT3   |    23|
-|6     |LUT4   |    60|
-|7     |LUT5   |   159|
-|8     |LUT6   |    55|
-|9     |FDCE   |   113|
+|4     |LUT2   |    12|
+|5     |LUT3   |    25|
+|6     |LUT4   |    65|
+|7     |LUT5   |   165|
+|8     |LUT6   |    58|
+|9     |FDCE   |   129|
 |10    |FDRE   |    72|
 |11    |FDSE   |     4|
-|12    |LD     |    58|
+|12    |LD     |    59|
 |13    |IBUF   |    21|
 |14    |OBUF   |    13|
 +------+-------+------+
@@ -494,7 +507,7 @@ Report Instance Areas:
 +------+--------------------+------------------------------+------+
 |      |Instance            |Module                        |Cells |
 +------+--------------------+------------------------------+------+
-|1     |top                 |                              |   622|
+|1     |top                 |                              |   656|
 |2     |  btn_reset         |pushButton_detector           |    18|
 |3     |    db              |debouncer_16                  |     4|
 |4     |    risinged        |rising_edge_17                |    12|
@@ -509,7 +522,7 @@ Report Instance Areas:
 |13    |      dff2          |DFF_15                        |     1|
 |14    |  button_divider    |clock_divider                 |    82|
 |15    |    counterMod      |counter_x_bit_10              |    81|
-|16    |  nolabel_line23    |ScrollController              |   276|
+|16    |  scroll            |ScrollController              |   278|
 |17    |    BCD             |DoubleDabble                  |    32|
 |18    |    btnl            |pushButton_detector_1         |    16|
 |19    |      db            |debouncer_5                   |     4|
@@ -523,35 +536,35 @@ Report Instance Areas:
 |27    |      sync          |synchronizer                  |     2|
 |28    |        dff1        |DFF                           |     1|
 |29    |        dff2        |DFF_4                         |     1|
-|30    |    counter         |counter_x_bit__parameterized1 |     7|
+|30    |    counter         |counter_x_bit__parameterized1 |     8|
 |31    |    divider_buttons |clock_divider_3               |    82|
 |32    |      counterMod    |counter_x_bit                 |    81|
 |33    |    divider_display |clock_divider__parameterized0 |    82|
 |34    |      counterMod    |counter_x_bit__parameterized0 |    81|
-|35    |    sevenseg        |SevenSegmentDisplayController |    25|
+|35    |    sevenseg        |SevenSegmentDisplayController |    26|
 |36    |  spm               |SPM                           |   191|
 +------+--------------------+------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:34 ; elapsed = 00:00:39 . Memory (MB): peak = 858.539 ; gain = 518.188
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:24 ; elapsed = 00:00:26 . Memory (MB): peak = 856.758 ; gain = 516.359
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 15 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:24 ; elapsed = 00:00:30 . Memory (MB): peak = 858.539 ; gain = 188.008
-Synthesis Optimization Complete : Time (s): cpu = 00:00:35 ; elapsed = 00:00:39 . Memory (MB): peak = 858.539 ; gain = 518.188
+Synthesis finished with 0 errors, 0 critical warnings and 14 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:15 ; elapsed = 00:00:20 . Memory (MB): peak = 856.758 ; gain = 184.898
+Synthesis Optimization Complete : Time (s): cpu = 00:00:24 ; elapsed = 00:00:27 . Memory (MB): peak = 856.758 ; gain = 516.359
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 107 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 108 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
 INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 58 instances were transformed.
-  LD => LDCE: 58 instances
+  A total of 59 instances were transformed.
+  LD => LDCE: 59 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-62 Infos, 34 Warnings, 18 Critical Warnings and 0 Errors encountered.
+61 Infos, 33 Warnings, 18 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:37 ; elapsed = 00:00:42 . Memory (MB): peak = 858.539 ; gain = 530.500
+synth_design: Time (s): cpu = 00:00:25 ; elapsed = 00:00:29 . Memory (MB): peak = 856.758 ; gain = 529.051
 WARNING: [Constraints 18-5210] No constraint will be written out.
 INFO: [Common 17-1381] The checkpoint 'D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.runs/synth_1/topModule.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file topModule_utilization_synth.rpt -pb topModule_utilization_synth.pb
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.056 . Memory (MB): peak = 858.539 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Tue May 20 18:24:27 2025...
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.026 . Memory (MB): peak = 856.758 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Tue May 20 22:26:18 2025...
