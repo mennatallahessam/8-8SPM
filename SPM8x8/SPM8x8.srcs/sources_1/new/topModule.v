@@ -1,76 +1,28 @@
 `timescale 1ns / 1ps
 
 module topModule(
-    input clk, rst, PISO_load, control, left, right,
+    input clk, rst, BTNL, BTNR, BTNC,
     input [7:0] X, Y,
-    output reg [6:0] segments,
-    output [15:0] product_out
+    output [6:0] seg,
+    output [3:0] an,
+    output finish, start_multiplication
     );
    
+//   wire finish;
+   wire [15:0] spm_out;
+   wire clk_button;
+   wire reset_button;
+   wire start;
+   wire fin;
    
-//    wire clk_out;
-//    assign clk_out = clk;
-    
-//    wire serial_Y;
-//    wire controlBtn, leftBtn, rightBtn;
-//    wire SPM_serial_out;
-//    wire [15:0] SIPO_out;
-//    reg en_count;
-//    reg [4:0] counter;
-//    reg multiplying;
-//    reg done; 
-    
-//    assign product_out = SIPO_out;
-    
-//    //COMMENTED FOR SIMULATION
-////    clock_divider divider(.clk(clk), .rst(rst), .clk_out(clk_out));
-    
-//    PISO piso(.clk(clk), .rst(rst), .load(PISO_load), .parallel_in(Y), .out(serial_Y));
-    
-////    pushButton_detector BTNC(.clk(clk_out), .rst(rst), .x(control), .z(controlBtn));
-//        wire controlBtn = control;    
-    
+   clock_divider #(25000) button_divider(.clk(clk), .rst(rst), .clk_out(clk_button));
+   pushButton_detector btnc(.clk(clk_button), .rst(rst), .x(BTNC), .z(start));
+   pushButton_detector btn_reset(.clk(clk_button), .rst(rst), .x(rst), .z(reset_button));
    
-////    pushButton_detector BTNL(.clk(clk_out), .rst(rst), .x(left), .z(leftBtn));
-    
-////    pushButton_detector BTNR(.clk(clk_out), .rst(rst), .x(right), .z(rightBtn));
-    
-////    SPM spm(.Y(serial_Y), .X(X), .reset(rst), .clk(clk), .control(controlBtn), .en(en_count), .serial_out(SPM_serial_out));
-//    SPM spm(.out(product_out), .finish(),
-//    input reset,
-//    input clk,
-//    input [7:0] A,
-//    input [7:0] B
-//);    
-
-//    SIPO sipo(.clk(clk), .rst(rst), .serial_in(SPM_serial_out), .out(SIPO_out), .en(en_count));
-    
-//    always @ (posedge clk) begin
-//        if (!rst) begin
-//            counter <= 0;
-//            en_count <= 0;
-//            multiplying <= 0;
-//            done <= 0;
-//        end 
-        
-//        //else if (controlBtn) begin
-//        else if (control) begin
-//            en_count <= 1;
-//            multiplying <= 1;
-//            counter <= 0;
-//            done <= 0;
-//         end
-               
-//        else if (multiplying) begin
-//            counter <= counter + 1;
-//            if (counter == 15) begin
-//                multiplying <= 0;
-//                en_count <= 0;
-//                done <= 1;
-//             end
-             
-//        end
-        
-//    end
+   SPM spm(.out(spm_out), .finish(fin), .reset(reset_button), .clk(clk), .A(X), .B(Y), .en(start));
+   ScrollController(.clk(clk), .leftBtn(BTNL), .rightBtn(BTNR), .rst(reset_button), .seg(seg), .an(an), .product(spm_out), .en(fin));
+   
+    assign start_multiplication = start;
+    assign finish = fin;
     
 endmodule

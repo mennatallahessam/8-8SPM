@@ -1,6 +1,6 @@
 
 *** Running vivado
-    with args -log ScrollController.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source ScrollController.tcl
+    with args -log topModule.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source topModule.tcl
 
 
 ****** Vivado v2018.2 (64-bit)
@@ -8,18 +8,17 @@
   **** IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
     ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 
-source ScrollController.tcl -notrace
-create_project: Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 327.750 ; gain = 97.949
-Command: synth_design -top ScrollController -part xc7a35tcpg236-1
+source topModule.tcl -notrace
+Command: synth_design -top topModule -part xc7a35tcpg236-1
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 2464 
+INFO: Helper process launched with PID 2384 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 435.445 ; gain = 94.906
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 435.438 ; gain = 95.086
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-6157] synthesizing module 'ScrollController' [D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/sources_1/new/ScrollController.v:3]
+INFO: [Synth 8-6157] synthesizing module 'topModule' [D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/sources_1/new/topModule.v:3]
 INFO: [Synth 8-6157] synthesizing module 'clock_divider' [D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/sources_1/clock_divider.v:1]
 	Parameter n bound to: 25000 - type: integer 
 INFO: [Synth 8-6157] synthesizing module 'counter_x_bit' [D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/sources_1/new/counter_x_bit.v:3]
@@ -27,13 +26,6 @@ INFO: [Synth 8-6157] synthesizing module 'counter_x_bit' [D:/AUC/Spring 2025/Dig
 	Parameter n bound to: 25000 - type: integer 
 INFO: [Synth 8-6155] done synthesizing module 'counter_x_bit' (1#1) [D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/sources_1/new/counter_x_bit.v:3]
 INFO: [Synth 8-6155] done synthesizing module 'clock_divider' (2#1) [D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/sources_1/clock_divider.v:1]
-INFO: [Synth 8-6157] synthesizing module 'clock_divider__parameterized0' [D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/sources_1/clock_divider.v:1]
-	Parameter n bound to: 20000 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'counter_x_bit__parameterized0' [D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/sources_1/new/counter_x_bit.v:3]
-	Parameter x bound to: 32 - type: integer 
-	Parameter n bound to: 20000 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'counter_x_bit__parameterized0' (2#1) [D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/sources_1/new/counter_x_bit.v:3]
-INFO: [Synth 8-6155] done synthesizing module 'clock_divider__parameterized0' (2#1) [D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/sources_1/clock_divider.v:1]
 INFO: [Synth 8-6157] synthesizing module 'pushButton_detector' [D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/sources_1/pushButton_detector.v:3]
 INFO: [Synth 8-6157] synthesizing module 'debouncer' [D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/sources_1/debouncer.v:21]
 INFO: [Synth 8-6155] done synthesizing module 'debouncer' (3#1) [D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/sources_1/debouncer.v:21]
@@ -48,18 +40,29 @@ INFO: [Synth 8-6157] synthesizing module 'rising_edge' [D:/AUC/Spring 2025/Digit
 INFO: [Synth 8-155] case statement is not full and has no default [D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/sources_1/rising_edge.v:33]
 INFO: [Synth 8-6155] done synthesizing module 'rising_edge' (6#1) [D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/sources_1/rising_edge.v:26]
 INFO: [Synth 8-6155] done synthesizing module 'pushButton_detector' (7#1) [D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/sources_1/pushButton_detector.v:3]
+INFO: [Synth 8-6157] synthesizing module 'SPM' [D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/sources_1/new/SPM.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'SPM' (8#1) [D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/sources_1/new/SPM.v:5]
+INFO: [Synth 8-6157] synthesizing module 'ScrollController' [D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/sources_1/new/ScrollController.v:3]
+INFO: [Synth 8-6157] synthesizing module 'clock_divider__parameterized0' [D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/sources_1/clock_divider.v:1]
+	Parameter n bound to: 20000 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'counter_x_bit__parameterized0' [D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/sources_1/new/counter_x_bit.v:3]
+	Parameter x bound to: 32 - type: integer 
+	Parameter n bound to: 20000 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'counter_x_bit__parameterized0' (8#1) [D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/sources_1/new/counter_x_bit.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'clock_divider__parameterized0' (8#1) [D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/sources_1/clock_divider.v:1]
 INFO: [Synth 8-6157] synthesizing module 'DoubleDabble' [D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/sources_1/new/DoubleDabble.v:4]
-INFO: [Synth 8-6155] done synthesizing module 'DoubleDabble' (8#1) [D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/sources_1/new/DoubleDabble.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'DoubleDabble' (9#1) [D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/sources_1/new/DoubleDabble.v:4]
 INFO: [Synth 8-6157] synthesizing module 'SevenSegmentDisplayController' [D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/sources_1/new/SevenSegmentDisplayController.v:3]
-INFO: [Synth 8-6155] done synthesizing module 'SevenSegmentDisplayController' (9#1) [D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/sources_1/new/SevenSegmentDisplayController.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'SevenSegmentDisplayController' (10#1) [D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/sources_1/new/SevenSegmentDisplayController.v:3]
 INFO: [Synth 8-6157] synthesizing module 'counter_x_bit__parameterized1' [D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/sources_1/new/counter_x_bit.v:3]
 	Parameter x bound to: 2 - type: integer 
 	Parameter n bound to: 4 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'counter_x_bit__parameterized1' (9#1) [D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/sources_1/new/counter_x_bit.v:3]
-INFO: [Synth 8-6155] done synthesizing module 'ScrollController' (10#1) [D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/sources_1/new/ScrollController.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'counter_x_bit__parameterized1' (10#1) [D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/sources_1/new/counter_x_bit.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'ScrollController' (11#1) [D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/sources_1/new/ScrollController.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'topModule' (12#1) [D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/sources_1/new/topModule.v:3]
 WARNING: [Synth 8-3331] design SevenSegmentDisplayController has unconnected port clk
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 490.293 ; gain = 149.754
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 490.801 ; gain = 150.449
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -72,10 +75,10 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 490.293 ; gain = 149.754
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 490.801 ; gain = 150.449
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 490.293 ; gain = 149.754
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 490.801 ; gain = 150.449
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7a35tcpg236-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -84,12 +87,54 @@ Processing XDC Constraints
 Initializing timing engine
 Parsing XDC File [D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/constrs_1/new/SevenSegmentConstraints.xdc]
 Finished Parsing XDC File [D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/constrs_1/new/SevenSegmentConstraints.xdc]
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/constrs_1/new/SevenSegmentConstraints.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/ScrollController_propImpl.xdc].
-Resolution: To avoid this warning, move constraints listed in [.Xil/ScrollController_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/constrs_1/new/SevenSegmentConstraints.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/topModule_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/topModule_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Parsing XDC File [D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/constrs_1/new/testingScroll_constraints.xdc]
+WARNING: [Vivado 12-584] No ports matched 'leftBtn'. [D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/constrs_1/new/testingScroll_constraints.xdc:4]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/constrs_1/new/testingScroll_constraints.xdc:4]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'leftBtn'. [D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/constrs_1/new/testingScroll_constraints.xdc:5]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/constrs_1/new/testingScroll_constraints.xdc:5]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'rightBtn'. [D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/constrs_1/new/testingScroll_constraints.xdc:7]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/constrs_1/new/testingScroll_constraints.xdc:7]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'rightBtn'. [D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/constrs_1/new/testingScroll_constraints.xdc:8]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/constrs_1/new/testingScroll_constraints.xdc:8]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg_sel_debug[1]'. [D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/constrs_1/new/testingScroll_constraints.xdc:48]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/constrs_1/new/testingScroll_constraints.xdc:48]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg_sel_debug[1]'. [D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/constrs_1/new/testingScroll_constraints.xdc:49]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/constrs_1/new/testingScroll_constraints.xdc:49]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg_sel_debug[0]'. [D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/constrs_1/new/testingScroll_constraints.xdc:51]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/constrs_1/new/testingScroll_constraints.xdc:51]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'seg_sel_debug[0]'. [D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/constrs_1/new/testingScroll_constraints.xdc:52]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/constrs_1/new/testingScroll_constraints.xdc:52]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'btn_led_left'. [D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/constrs_1/new/testingScroll_constraints.xdc:54]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/constrs_1/new/testingScroll_constraints.xdc:54]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'btn_led_left'. [D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/constrs_1/new/testingScroll_constraints.xdc:55]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/constrs_1/new/testingScroll_constraints.xdc:55]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'btn_led_right'. [D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/constrs_1/new/testingScroll_constraints.xdc:57]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/constrs_1/new/testingScroll_constraints.xdc:57]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'btn_led_right'. [D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/constrs_1/new/testingScroll_constraints.xdc:58]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/constrs_1/new/testingScroll_constraints.xdc:58]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'clk_display'. [D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/constrs_1/new/testingScroll_constraints.xdc:60]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/constrs_1/new/testingScroll_constraints.xdc:60]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'clk_display'. [D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/constrs_1/new/testingScroll_constraints.xdc:61]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/constrs_1/new/testingScroll_constraints.xdc:61]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
 Finished Parsing XDC File [D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/constrs_1/new/testingScroll_constraints.xdc]
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/constrs_1/new/testingScroll_constraints.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/ScrollController_propImpl.xdc].
-Resolution: To avoid this warning, move constraints listed in [.Xil/ScrollController_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/constrs_1/new/testingScroll_constraints.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/topModule_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/topModule_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Parsing XDC File [D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/constrs_1/new/pushbutton_constraints.xdc]
 WARNING: [Vivado 12-584] No ports matched 'x'. [D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/constrs_1/new/pushbutton_constraints.xdc:5]
 CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/constrs_1/new/pushbutton_constraints.xdc:5]
@@ -104,38 +149,42 @@ WARNING: [Vivado 12-584] No ports matched 'z'. [D:/AUC/Spring 2025/Digital Desig
 CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/constrs_1/new/pushbutton_constraints.xdc:8]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
 Finished Parsing XDC File [D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/constrs_1/new/pushbutton_constraints.xdc]
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/constrs_1/new/pushbutton_constraints.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/ScrollController_propImpl.xdc].
-Resolution: To avoid this warning, move constraints listed in [.Xil/ScrollController_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/constrs_1/new/pushbutton_constraints.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/topModule_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/topModule_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/constrs_1/new/topmodule_constraints.xdc]
+Finished Parsing XDC File [D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/constrs_1/new/topmodule_constraints.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/constrs_1/new/topmodule_constraints.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/topModule_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/topModule_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 820.137 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 820.980 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:27 ; elapsed = 00:00:32 . Memory (MB): peak = 820.137 ; gain = 479.598
+Finished Constraint Validation : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 820.980 ; gain = 480.629
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:27 ; elapsed = 00:00:32 . Memory (MB): peak = 820.137 ; gain = 479.598
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 820.980 ; gain = 480.629
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:27 ; elapsed = 00:00:32 . Memory (MB): peak = 820.137 ; gain = 479.598
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 820.980 ; gain = 480.629
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-5545] ROM "count" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "clk_out" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-5545] ROM "count" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-5545] ROM "clk_out" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'rising_edge'
 INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5545] ROM "count" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "clk_out" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 WARNING: [Synth 8-327] inferring latch for variable 'FSM_sequential_next_state_reg' [D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/sources_1/rising_edge.v:34]
 WARNING: [Synth 8-327] inferring latch for variable 'FSM_onehot_next_state_reg' [D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/sources_1/rising_edge.v:34]
 ---------------------------------------------------------------------------------------------------
@@ -147,8 +196,19 @@ WARNING: [Synth 8-327] inferring latch for variable 'FSM_onehot_next_state_reg' 
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'rising_edge'
 WARNING: [Synth 8-327] inferring latch for variable 'FSM_onehot_next_state_reg' [D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/sources_1/rising_edge.v:34]
+WARNING: [Synth 8-327] inferring latch for variable 'bcd_ones_reg' [D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/sources_1/new/DoubleDabble.v:41]
+WARNING: [Synth 8-327] inferring latch for variable 'bcd_tens_reg' [D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/sources_1/new/DoubleDabble.v:42]
+WARNING: [Synth 8-327] inferring latch for variable 'bcd_hundreds_reg' [D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/sources_1/new/DoubleDabble.v:43]
+WARNING: [Synth 8-327] inferring latch for variable 'bcd_thousands_reg' [D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/sources_1/new/DoubleDabble.v:44]
+WARNING: [Synth 8-327] inferring latch for variable 'bcd_ten_thousands_reg' [D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/sources_1/new/DoubleDabble.v:45]
+WARNING: [Synth 8-327] inferring latch for variable 'seg_reg' [D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/sources_1/new/SevenSegmentDisplayController.v:40]
+WARNING: [Synth 8-327] inferring latch for variable 'an_reg' [D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/sources_1/new/SevenSegmentDisplayController.v:18]
+WARNING: [Synth 8-327] inferring latch for variable 'current_num_reg' [D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/sources_1/new/SevenSegmentDisplayController.v:19]
+WARNING: [Synth 8-327] inferring latch for variable 'first_reg' [D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/sources_1/new/ScrollController.v:32]
+WARNING: [Synth 8-327] inferring latch for variable 'second_reg' [D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/sources_1/new/ScrollController.v:32]
+WARNING: [Synth 8-327] inferring latch for variable 'third_reg' [D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/sources_1/new/ScrollController.v:32]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:29 ; elapsed = 00:00:34 . Memory (MB): peak = 820.137 ; gain = 479.598
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:16 ; elapsed = 00:00:19 . Memory (MB): peak = 820.980 ; gain = 480.629
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -161,23 +221,28 @@ Start RTL Component Statistics
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input     32 Bit       Adders := 2     
-	   2 Input      4 Bit       Adders := 45    
+	   2 Input     32 Bit       Adders := 3     
+	   2 Input      4 Bit       Adders := 46    
 	   2 Input      2 Bit       Adders := 2     
 +---Registers : 
-	               32 Bit    Registers := 2     
+	               32 Bit    Registers := 3     
+	               16 Bit    Registers := 1     
+	                8 Bit    Registers := 2     
+	                4 Bit    Registers := 1     
 	                2 Bit    Registers := 2     
-	                1 Bit    Registers := 12    
+	                1 Bit    Registers := 25    
 +---Muxes : 
 	   2 Input     35 Bit        Muxes := 1     
-	   2 Input     32 Bit        Muxes := 2     
-	   2 Input      4 Bit        Muxes := 34    
+	   2 Input     32 Bit        Muxes := 3     
+	   2 Input     16 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 2     
+	   2 Input      4 Bit        Muxes := 35    
 	   4 Input      4 Bit        Muxes := 5     
-	   3 Input      3 Bit        Muxes := 2     
-	   2 Input      3 Bit        Muxes := 6     
-	   2 Input      2 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 3     
-	   3 Input      1 Bit        Muxes := 4     
+	   3 Input      3 Bit        Muxes := 4     
+	   2 Input      3 Bit        Muxes := 12    
+	   2 Input      2 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 6     
+	   3 Input      1 Bit        Muxes := 8     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -185,15 +250,6 @@ Finished RTL Component Statistics
 Start RTL Hierarchical Component Statistics 
 ---------------------------------------------------------------------------------
 Hierarchical RTL Component report 
-Module ScrollController 
-Detailed RTL Component Info : 
-+---Adders : 
-	   2 Input      2 Bit       Adders := 1     
-+---Registers : 
-	                2 Bit    Registers := 1     
-+---Muxes : 
-	   4 Input      4 Bit        Muxes := 3     
-	   2 Input      1 Bit        Muxes := 1     
 Module counter_x_bit 
 Detailed RTL Component Info : 
 +---Adders : 
@@ -203,20 +259,6 @@ Detailed RTL Component Info :
 +---Muxes : 
 	   2 Input     32 Bit        Muxes := 1     
 Module clock_divider 
-Detailed RTL Component Info : 
-+---Registers : 
-	                1 Bit    Registers := 1     
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module counter_x_bit__parameterized0 
-Detailed RTL Component Info : 
-+---Adders : 
-	   2 Input     32 Bit       Adders := 1     
-+---Registers : 
-	               32 Bit    Registers := 1     
-+---Muxes : 
-	   2 Input     32 Bit        Muxes := 1     
-Module clock_divider__parameterized0 
 Detailed RTL Component Info : 
 +---Registers : 
 	                1 Bit    Registers := 1     
@@ -236,6 +278,34 @@ Detailed RTL Component Info :
 	   3 Input      3 Bit        Muxes := 1     
 	   2 Input      3 Bit        Muxes := 3     
 	   3 Input      1 Bit        Muxes := 2     
+Module SPM 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      4 Bit       Adders := 1     
++---Registers : 
+	               16 Bit    Registers := 1     
+	                8 Bit    Registers := 2     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     16 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 2     
+	   2 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 2     
+Module counter_x_bit__parameterized0 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+Module clock_divider__parameterized0 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
 Module DoubleDabble 
 Detailed RTL Component Info : 
 +---Adders : 
@@ -255,6 +325,16 @@ Detailed RTL Component Info :
 	                2 Bit    Registers := 1     
 +---Muxes : 
 	   2 Input      2 Bit        Muxes := 1     
+Module ScrollController 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      2 Bit       Adders := 1     
++---Registers : 
+	                2 Bit    Registers := 1     
++---Muxes : 
+	   4 Input      4 Bit        Muxes := 3     
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
 ---------------------------------------------------------------------------------
 Finished RTL Hierarchical Component Statistics
 ---------------------------------------------------------------------------------
@@ -271,15 +351,16 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 Warning: Parallel synthesis criteria is not met 
-INFO: [Synth 8-5545] ROM "divider_buttons/clk_out" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "divider_display/clk_out" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "divider_buttons/counterMod/count" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "divider_display/counterMod/count" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "divider_buttons/clk_out" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "divider_display/clk_out" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-WARNING: [Synth 8-3917] design ScrollController has port an[3] driven by constant 1
+INFO: [Synth 8-5545] ROM "button_divider/counterMod/count" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "button_divider/clk_out" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "nolabel_line23/divider_buttons/counterMod/count" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "nolabel_line23/divider_buttons/clk_out" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "nolabel_line23/divider_display/counterMod/count" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "nolabel_line23/divider_display/clk_out" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\nolabel_line23/sevenseg/an_reg[3] )
+WARNING: [Synth 8-3332] Sequential element (nolabel_line23/sevenseg/an_reg[3]) is unused and will be removed from module topModule.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:32 ; elapsed = 00:00:37 . Memory (MB): peak = 820.137 ; gain = 479.598
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:23 ; elapsed = 00:00:26 . Memory (MB): peak = 820.980 ; gain = 480.629
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -291,13 +372,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:48 ; elapsed = 00:00:55 . Memory (MB): peak = 820.137 ; gain = 479.598
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:33 ; elapsed = 00:00:37 . Memory (MB): peak = 820.980 ; gain = 480.629
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:48 ; elapsed = 00:00:55 . Memory (MB): peak = 820.137 ; gain = 479.598
+Finished Timing Optimization : Time (s): cpu = 00:00:33 ; elapsed = 00:00:37 . Memory (MB): peak = 820.980 ; gain = 480.629
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -309,7 +390,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:48 ; elapsed = 00:00:55 . Memory (MB): peak = 829.117 ; gain = 488.578
+Finished Technology Mapping : Time (s): cpu = 00:00:33 ; elapsed = 00:00:37 . Memory (MB): peak = 858.539 ; gain = 518.188
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -333,7 +414,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:50 ; elapsed = 00:00:57 . Memory (MB): peak = 829.117 ; gain = 488.578
+Finished IO Insertion : Time (s): cpu = 00:00:34 ; elapsed = 00:00:38 . Memory (MB): peak = 858.539 ; gain = 518.188
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -346,7 +427,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:50 ; elapsed = 00:00:57 . Memory (MB): peak = 829.117 ; gain = 488.578
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:34 ; elapsed = 00:00:39 . Memory (MB): peak = 858.539 ; gain = 518.188
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -358,25 +439,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:50 ; elapsed = 00:00:57 . Memory (MB): peak = 829.117 ; gain = 488.578
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:34 ; elapsed = 00:00:39 . Memory (MB): peak = 858.539 ; gain = 518.188
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:50 ; elapsed = 00:00:57 . Memory (MB): peak = 829.117 ; gain = 488.578
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:34 ; elapsed = 00:00:39 . Memory (MB): peak = 858.539 ; gain = 518.188
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:50 ; elapsed = 00:00:57 . Memory (MB): peak = 829.117 ; gain = 488.578
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:34 ; elapsed = 00:00:39 . Memory (MB): peak = 858.539 ; gain = 518.188
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:50 ; elapsed = 00:00:57 . Memory (MB): peak = 829.117 ; gain = 488.578
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:34 ; elapsed = 00:00:39 . Memory (MB): peak = 858.539 ; gain = 518.188
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -392,66 +473,84 @@ Report Cell Usage:
 +------+-------+------+
 |      |Cell   |Count |
 +------+-------+------+
-|1     |BUFG   |     1|
-|2     |CARRY4 |    16|
+|1     |BUFG   |     2|
+|2     |CARRY4 |    28|
 |3     |LUT1   |     3|
-|4     |LUT2   |     8|
-|5     |LUT3   |     4|
-|6     |LUT4   |    18|
-|7     |LUT5   |    74|
-|8     |FDCE   |    76|
-|9     |FDRE   |     8|
-|10    |FDSE   |     2|
-|11    |LD     |     6|
-|12    |IBUF   |     4|
-|13    |OBUF   |    16|
+|4     |LUT2   |    11|
+|5     |LUT3   |    23|
+|6     |LUT4   |    60|
+|7     |LUT5   |   159|
+|8     |LUT6   |    55|
+|9     |FDCE   |   113|
+|10    |FDRE   |    72|
+|11    |FDSE   |     4|
+|12    |LD     |    58|
+|13    |IBUF   |    21|
+|14    |OBUF   |    13|
 +------+-------+------+
 
 Report Instance Areas: 
-+------+------------------+------------------------------+------+
-|      |Instance          |Module                        |Cells |
-+------+------------------+------------------------------+------+
-|1     |top               |                              |   236|
-|2     |  btnl            |pushButton_detector           |    18|
-|3     |    db            |debouncer_2                   |     4|
-|4     |    risinged      |rising_edge_3                 |    12|
-|5     |    sync          |synchronizer_4                |     2|
-|6     |      dff1        |DFF_5                         |     1|
-|7     |      dff2        |DFF_6                         |     1|
-|8     |  btnr            |pushButton_detector_0         |    18|
-|9     |    db            |debouncer                     |     4|
-|10    |    risinged      |rising_edge                   |    12|
-|11    |    sync          |synchronizer                  |     2|
-|12    |      dff1        |DFF                           |     1|
-|13    |      dff2        |DFF_1                         |     1|
-|14    |  counter         |counter_x_bit__parameterized1 |     7|
-|15    |  divider_buttons |clock_divider                 |    82|
-|16    |    counterMod    |counter_x_bit                 |    81|
-|17    |  divider_display |clock_divider__parameterized0 |    82|
-|18    |    counterMod    |counter_x_bit__parameterized0 |    81|
-|19    |  sevenseg        |SevenSegmentDisplayController |     6|
-+------+------------------+------------------------------+------+
++------+--------------------+------------------------------+------+
+|      |Instance            |Module                        |Cells |
++------+--------------------+------------------------------+------+
+|1     |top                 |                              |   622|
+|2     |  btn_reset         |pushButton_detector           |    18|
+|3     |    db              |debouncer_16                  |     4|
+|4     |    risinged        |rising_edge_17                |    12|
+|5     |    sync            |synchronizer_18               |     2|
+|6     |      dff1          |DFF_19                        |     1|
+|7     |      dff2          |DFF_20                        |     1|
+|8     |  btnc              |pushButton_detector_0         |    19|
+|9     |    db              |debouncer_11                  |     4|
+|10    |    risinged        |rising_edge_12                |    13|
+|11    |    sync            |synchronizer_13               |     2|
+|12    |      dff1          |DFF_14                        |     1|
+|13    |      dff2          |DFF_15                        |     1|
+|14    |  button_divider    |clock_divider                 |    82|
+|15    |    counterMod      |counter_x_bit_10              |    81|
+|16    |  nolabel_line23    |ScrollController              |   276|
+|17    |    BCD             |DoubleDabble                  |    32|
+|18    |    btnl            |pushButton_detector_1         |    16|
+|19    |      db            |debouncer_5                   |     4|
+|20    |      risinged      |rising_edge_6                 |    10|
+|21    |      sync          |synchronizer_7                |     2|
+|22    |        dff1        |DFF_8                         |     1|
+|23    |        dff2        |DFF_9                         |     1|
+|24    |    btnr            |pushButton_detector_2         |    16|
+|25    |      db            |debouncer                     |     4|
+|26    |      risinged      |rising_edge                   |    10|
+|27    |      sync          |synchronizer                  |     2|
+|28    |        dff1        |DFF                           |     1|
+|29    |        dff2        |DFF_4                         |     1|
+|30    |    counter         |counter_x_bit__parameterized1 |     7|
+|31    |    divider_buttons |clock_divider_3               |    82|
+|32    |      counterMod    |counter_x_bit                 |    81|
+|33    |    divider_display |clock_divider__parameterized0 |    82|
+|34    |      counterMod    |counter_x_bit__parameterized0 |    81|
+|35    |    sevenseg        |SevenSegmentDisplayController |    25|
+|36    |  spm               |SPM                           |   191|
++------+--------------------+------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:50 ; elapsed = 00:00:57 . Memory (MB): peak = 829.117 ; gain = 488.578
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:34 ; elapsed = 00:00:39 . Memory (MB): peak = 858.539 ; gain = 518.188
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 4 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:29 ; elapsed = 00:00:41 . Memory (MB): peak = 829.117 ; gain = 158.734
-Synthesis Optimization Complete : Time (s): cpu = 00:00:50 ; elapsed = 00:00:58 . Memory (MB): peak = 829.117 ; gain = 488.578
+Synthesis finished with 0 errors, 0 critical warnings and 15 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:24 ; elapsed = 00:00:30 . Memory (MB): peak = 858.539 ; gain = 188.008
+Synthesis Optimization Complete : Time (s): cpu = 00:00:35 ; elapsed = 00:00:39 . Memory (MB): peak = 858.539 ; gain = 518.188
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 26 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 107 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
 INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 6 instances were transformed.
-  LD => LDCE: 6 instances
+  A total of 58 instances were transformed.
+  LD => LDCE: 58 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-56 Infos, 9 Warnings, 4 Critical Warnings and 0 Errors encountered.
+62 Infos, 34 Warnings, 18 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:53 ; elapsed = 00:01:01 . Memory (MB): peak = 839.547 ; gain = 511.797
+synth_design: Time (s): cpu = 00:00:37 ; elapsed = 00:00:42 . Memory (MB): peak = 858.539 ; gain = 530.500
 WARNING: [Constraints 18-5210] No constraint will be written out.
-INFO: [Common 17-1381] The checkpoint 'D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.runs/synth_1/ScrollController.dcp' has been generated.
-INFO: [runtcl-4] Executing : report_utilization -file ScrollController_utilization_synth.rpt -pb ScrollController_utilization_synth.pb
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.054 . Memory (MB): peak = 839.547 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Tue May 20 03:55:11 2025...
+INFO: [Common 17-1381] The checkpoint 'D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.runs/synth_1/topModule.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file topModule_utilization_synth.rpt -pb topModule_utilization_synth.pb
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.056 . Memory (MB): peak = 858.539 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Tue May 20 18:24:27 2025...

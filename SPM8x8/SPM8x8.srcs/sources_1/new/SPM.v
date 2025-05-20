@@ -8,7 +8,8 @@ module SPM (
     input reset,
     input clk,
     input [7:0] A,
-    input [7:0] B
+    input [7:0] B,
+    input en
 );
 
     reg [3:0] count;
@@ -19,6 +20,7 @@ module SPM (
     reg busy;
 
     always @(posedge clk or posedge reset) begin
+    if (en) begin
         if (reset) begin
             count <= 0;
             out <= 0;
@@ -48,6 +50,7 @@ module SPM (
             finish <= 1;
             busy <= 0;
         end
+    end
     end
 endmodule
 

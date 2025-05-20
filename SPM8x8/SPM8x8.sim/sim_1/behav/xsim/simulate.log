@@ -1,0 +1,12 @@
+Vivado Simulator 2018.2
+Time resolution is 1 ps
+Test 0: PASS -- A=  3, B=  5, Result=   15
+Test 1: PASS -- A= 15, B= 12, Result=  180
+Test 2: PASS -- A=255, B=  2, Result=  510
+Test 3: PASS -- A=100, B=100, Result=10000
+Test 4: PASS -- A=  0, B=200, Result=    0
+$finish called at time : 565 ns : File "D:/AUC/Spring 2025/Digital Design I/Project 2/8-8SPM/SPM8x8/SPM8x8.srcs/sim_1/new/SPM_TB.v" Line 65
+rom=0, Display Values: [3]=0 [2]=0 [1]=0 [0]=3, Current Active Display= 0
+Time=                   0, rst=0, button_l=0, button_r=0, button_output_l=x, button_output_r=x, seg=0110000, an=1110
+Time=               20000, rst=1, button_l=0, button_r=0, button_output_l=0, button_output_r=0, seg=0110000, an=1110
+Time=              120000, rst=1, button_l=0, button_r=1, button_output_l=0, button_output_r=0, seg=0110000, an=1110

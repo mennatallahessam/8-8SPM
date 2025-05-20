@@ -2,10 +2,10 @@
 
 module ScrollController (
     input clk, leftBtn, rightBtn, rst,
+    input [15:0] product,
     output [6:0] seg,
     output [3:0] an,
-    output btn_led_left, btn_led_right, clk_display,
-    output [1:0] seg_sel_debug
+    input en
     );
     
     //ADD 16 BIT PRODUCT TO PARAMETERS!!! AND THEN CHECK FOR SIGN IN SWITCH CASE 
@@ -40,49 +40,53 @@ module ScrollController (
     pushButton_detector btnl(.clk(clk_buttons), .rst(rst), .x(leftBtn), .z(leftBtn_out));
     pushButton_detector btnr(.clk(clk_buttons), .rst(rst), .x(rightBtn), .z(rightBtn_out));
     
-    DoubleDabble BCD (.binary_in(16'd23456), .bcd_ones(bcd_ones), .bcd_tens(bcd_tens),.bcd_hundreds(bcd_hundreds), .bcd_thousands(bcd_thousands), .bcd_ten_thousands(bcd_ten_thousands));
+    DoubleDabble BCD (.binary_in(product), .bcd_ones(bcd_ones), .bcd_tens(bcd_tens),.bcd_hundreds(bcd_hundreds), .bcd_thousands(bcd_thousands), .bcd_ten_thousands(bcd_ten_thousands), .en(en));
     
     
     always @ (posedge clk or negedge rst) begin
-        if (rst)
-            start_from <= 0;
-        else begin
-            if (leftBtn_out && start_from > 0)
-                start_from <= start_from - 1;
-            else if (rightBtn_out && start_from < 2)
-                start_from <= start_from + 1;
+        if (en) begin
+            if (rst)
+                start_from <= 0;
+            else begin
+                if (leftBtn_out && start_from > 0)
+                    start_from <= start_from - 1;
+                else if (rightBtn_out && start_from < 2)
+                    start_from <= start_from + 1;
+            end
         end
     end
     
 
    always @(*) begin
-    case (start_from)
-        0: begin
-            first = bcd_ten_thousands;
-            second = bcd_thousands;
-            third = bcd_hundreds;
+       if (en) begin
+        case (start_from)
+            0: begin
+                first = bcd_ten_thousands;
+                second = bcd_thousands;
+                third = bcd_hundreds;
+            end
+            1: begin
+                first = bcd_thousands;
+                second = bcd_hundreds;
+                third = bcd_tens;
+            end
+            2: begin
+                first = bcd_hundreds;
+                second = bcd_tens;
+                third = bcd_ones;
+            end
+            default: begin
+                first = 4'd0;
+                second = 4'd0;
+                third = 4'd0;
+            end
+        endcase
         end
-        1: begin
-            first = bcd_thousands;
-            second = bcd_hundreds;
-            third = bcd_tens;
-        end
-        2: begin
-            first = bcd_hundreds;
-            second = bcd_tens;
-            third = bcd_ones;
-        end
-        default: begin
-            first = 4'd0;
-            second = 4'd0;
-            third = 4'd0;
-        end
-    endcase
     end
    
-   SevenSegmentDisplayController sevenseg(.clk(clk_display_internal), .first(first), .second(second), .third(third), .digit(segmentSelector), .seg(seg), .an(an));
+   SevenSegmentDisplayController sevenseg(.clk(clk_display_internal), .first(first), .second(second), .third(third), .digit(segmentSelector), .seg(seg), .an(an), .en(en));
 
-   counter_x_bit #(2,4) counter(.clk(clk_display_internal), .reset(rst), .en(1'b1), .count(segmentSelector));
+   counter_x_bit #(2,4) counter(.clk(clk_display_internal), .reset(rst), .en(en), .count(segmentSelector));
 
    assign seg_sel_debug = segmentSelector;
 

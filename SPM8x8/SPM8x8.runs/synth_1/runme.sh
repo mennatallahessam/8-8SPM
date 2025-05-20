@@ -40,4 +40,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log ScrollController.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source ScrollController.tcl
+EAStep vivado -log topModule.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source topModule.tcl

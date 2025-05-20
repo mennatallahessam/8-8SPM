@@ -23,7 +23,7 @@ eval( EAInclude(ISEJScriptLib) );
 
 
 ISEStep( "vivado",
-         "-log ScrollController.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source ScrollController.tcl" );
+         "-log topModule.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source topModule.tcl" );
 
 
 

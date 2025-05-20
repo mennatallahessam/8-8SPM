@@ -5,46 +5,51 @@ module SevenSegmentDisplayController (
     input [3:0] first, second, third,
     input [1:0] digit,
     output reg [6:0] seg,          
-    output reg [3:0] an
+    output reg [3:0] an,
+    input en
     );
     
     reg [3:0] current_num;
     
     always @(*) begin
-        case (digit)
-            2'd0: begin 
-                an = 4'b1110;  // Rightmost display
-                current_num = third;
-            end
-            2'd1: begin 
-                an = 4'b1101;  // Middle display
-                current_num = second;
-            end
-            2'd2: begin 
-                an = 4'b1011;  // Leftmost display
-                current_num = first;
-            end
-            default: begin 
-                an = 4'b1111;
-                current_num = 4'd15;
-            end
-        endcase
+        if (en) begin
+            case (digit)
+                2'd0: begin 
+                    an = 4'b1110;  // Rightmost display
+                    current_num = third;
+                end
+                2'd1: begin 
+                    an = 4'b1101;  // Middle display
+                    current_num = second;
+                end
+                2'd2: begin 
+                    an = 4'b1011;  // Leftmost display
+                    current_num = first;
+                end
+                default: begin 
+                    an = 4'b1111;
+                    current_num = 4'd15;
+                end
+            endcase
+        end
     end
     
     always @(*) begin
-        case (current_num)
-            4'd0: seg = 7'b1000000;
-            4'd1: seg = 7'b1111001;
-            4'd2: seg = 7'b0100100;
-            4'd3: seg = 7'b0110000;
-            4'd4: seg = 7'b0011001;
-            4'd5: seg = 7'b0010010;
-            4'd6: seg = 7'b0000010;
-            4'd7: seg = 7'b1111000;
-            4'd8: seg = 7'b0000000;
-            4'd9: seg = 7'b0010000;
-            default: seg = 7'b1111111;
-        endcase
+        if (en) begin
+            case (current_num)
+                4'd0: seg = 7'b1000000;
+                4'd1: seg = 7'b1111001;
+                4'd2: seg = 7'b0100100;
+                4'd3: seg = 7'b0110000;
+                4'd4: seg = 7'b0011001;
+                4'd5: seg = 7'b0010010;
+                4'd6: seg = 7'b0000010;
+                4'd7: seg = 7'b1111000;
+                4'd8: seg = 7'b0000000;
+                4'd9: seg = 7'b0010000;
+                default: seg = 7'b1111111;
+            endcase
+        end
     end
     
 endmodule
